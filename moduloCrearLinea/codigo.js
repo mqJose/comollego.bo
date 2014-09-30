@@ -56,13 +56,28 @@ function dibujarRuta() {
         destination: end,
         waypoints: waypts,
           //optimizeWaypoints: true,
-        travelMode: google.maps.TravelMode.WALKING
+        //travelMode: google.maps.TravelMode.WALKING
+        travelMode: google.maps.TravelMode.DRIVING
     };
     directionsService.route(request, function(response, status) {
         console.log("respuesta : " + status);
         if (status == google.maps.DirectionsStatus.OK) {
 
             directionsDisplay.setDirections(response);
+            var superpuntos = response.routes[0].overview_path; //<= Aqui te da todos los puntos en un vector
+            var nn = superpuntos.length;
+            for (var i = 0; i < nn; i++) {
+                console.log("pnt : " + pnt);
+                var pnt = superpuntos[i];
+                var marca = new google.maps.Marker({
+                    position: pnt,
+                    map: map
+                });
+            }
+            console.log("Cantidad de puntos :" + superpuntos.length);
+
+
+            //console.log(ruta.overview_path);
            /* var route = response.routes[0];
 
             var summaryPanel = document.getElementById('directions_panel');
