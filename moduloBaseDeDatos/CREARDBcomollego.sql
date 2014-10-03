@@ -29,7 +29,7 @@ CREATE TABLE parada(
 CREATE TABLE tiene(
 	orden integer NOT NULL, 
 	idlinea integer NOT NULL,
-	idparada varchar(10) NOT NULL,
+	idparada integer NOT NULL,
 	FOREIGN KEY (idlinea) REFERENCES linea (idlinea),
 	FOREIGN KEY (idparada) REFERENCES parada (idparada)
 );
@@ -40,7 +40,7 @@ CREATE TABLE comentario_parada(
 	email varchar(50),
 	contenido varchar(200),
 	fecha datetime,
-	idparada varchar(50),
+	idparada integer NOT NULL,
 	created_at timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
 	updated_at timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
 	PRIMARY KEY(idcomentario),
@@ -56,7 +56,7 @@ CREATE TABLE denuncia_linea(
 	fecha datetime,
 	created_at timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
 	updated_at timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-	idlinea varchar(10),
+	idlinea integer NOT NULL,
 	PRIMARY KEY(iddenuncia),
 	FOREIGN KEY(idlinea) REFERENCES linea(idlinea)
 );
