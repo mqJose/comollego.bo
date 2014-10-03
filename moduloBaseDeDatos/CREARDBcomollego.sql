@@ -2,7 +2,7 @@ CREATE DATABASE comollego;
 USE comollego;
 
 CREATE TABLE sindicato(
-	idsindicato varchar(10) NOT NULL,
+	idsindicato integer NOT NULL AUTO_INCREMENT,
 	nombre varchar(50),
 	tipo varchar(20),
 	direccion varchar(50),
@@ -11,15 +11,15 @@ CREATE TABLE sindicato(
 );
 
 CREATE TABLE linea(
-	idlinea varchar(10) NOT NULL,
+	idlinea integer NOT NULL AUTO_INCREMENT,
 	nombre varchar(10),
-	idsindicato varchar(10) NOT NULL,
+	idsindicato integer NOT NULL,
 	PRIMARY KEY (idlinea),
 	FOREIGN KEY (idsindicato) REFERENCES sindicato(idsindicato)
 );
 
 CREATE TABLE parada(
-	idparada varchar(10) NOT NULL,
+	idparada integer NOT NULL AUTO_INCREMENT,
 	referencia varchar (200),
 	latitud varchar(30),
 	longitud varchar(30),
@@ -28,14 +28,14 @@ CREATE TABLE parada(
 
 CREATE TABLE tiene(
 	orden integer NOT NULL, 
-	idlinea varchar(10) NOT NULL,
+	idlinea integer NOT NULL,
 	idparada varchar(10) NOT NULL,
 	FOREIGN KEY (idlinea) REFERENCES linea (idlinea),
 	FOREIGN KEY (idparada) REFERENCES parada (idparada)
 );
 
 CREATE TABLE comentario_parada(
-	idcomentario varchar(10) NOT NULL,
+	idcomentario integer NOT NULL AUTO_INCREMENT,
 	remitente varchar(20),
 	email varchar(50),
 	contenido varchar(200),
@@ -48,7 +48,7 @@ CREATE TABLE comentario_parada(
 );
 
 CREATE TABLE denuncia_linea(
-	iddenuncia varchar(10) NOT NULL,
+	iddenuncia integer NOT NULL AUTO_INCREMENT,
 	denunciante varchar(20),
 	email varchar(50),
 	contenido varchar(200),
