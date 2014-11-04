@@ -30,7 +30,7 @@ function initialize() {
 function marcamos_paradas(a,b) {
     var marker;
     for(var i=0;i<a.length;i++) {
-         placeMarker(a[i], map, b[i],false);//  false dise que   solo pintara una parada de la base de datos
+        placeMarker(a[i], map, b[i],false);//  false dise que   solo pintara una parada de la base de datos
     }
 }
 function marker_prueva(pos){
@@ -51,8 +51,8 @@ function placeMarker(pos, map, x,f) {
         draggable:f,
         animation:google.maps.Animation.drop
     });
-     if(f)
-            marker.setIcon('https://maps.gstatic.com/intl/es_ALL/mapfiles/ms/micons/cabs.png');
+    if(f)
+        marker.setIcon('https://maps.gstatic.com/intl/es_ALL/mapfiles/ms/micons/cabs.png');
     else
         marker.setIcon('http://www.rubipamplona.com/img/marker.png');
     google.maps.event.addListener(marker, 'click', function() {
@@ -93,30 +93,30 @@ function actualiza()
 }
 function mueve_marke(x,y){
     if(trazo[y]!='linea'){
-         if(x>-1&&y<vector_markes.length){
+        if(x>-1&&y<vector_markes.length){
             var pol=[];
             var request = {origin: vector_markes[x].getPosition(),destination: vector_markes[y].getPosition(),travelMode: google.maps.TravelMode.DRIVING};
-             directionsService.route(request, function(response, status) {
+            directionsService.route(request, function(response, status) {
                 if(status == google.maps.DirectionsStatus.OK){
                     tiempo[x+1]=response.routes[0].legs[0].duration.value;
-                    for(var j = 0; j < response.routes[0].overview_path.length; j++) 
+                    for(var j = 0; j < response.routes[0].overview_path.length; j++)
                         pol.push(response.routes[0].overview_path[j]);
                     v_pol[x]=pol;
                     if (rutaactual)
-                            rutaactual.setMap(null);
+                        rutaactual.setMap(null);
                     var pl=[];
                     for(var u = 0 ; u < v_pol.length ; u++){
                         for(var w=0 ; w < v_pol[u].length ; w++ )
                             pl.push(v_pol[u][w]);
                     }
-                    rutaactual = new google.maps.Polyline({ 
+                    rutaactual = new google.maps.Polyline({
                         path: pl
                     });
                     rutaactual.setMap(map);
                     pasar_paradas_a_div();
                 }
             });
-         }
+        }
     }
     else {//  en esta parte cambiamos  si es teleferico
         v_pol[x]=[];
@@ -129,7 +129,7 @@ function mueve_marke(x,y){
         for(var u = 0 ; u < v_pol.length ; u++){
             for(var w=0 ; w < v_pol[u].length ; w++ )pl.push(v_pol[u][w]);
         }
-        rutaactual = new google.maps.Polyline({ 
+        rutaactual = new google.maps.Polyline({
             path: pl
         });
         rutaactual.setMap(map);
@@ -141,10 +141,10 @@ function adicionar(a)
     var b=true;
     for(var i=0;i<vector_markes.length;i++)
         if(vector_markes[i]===a)b=false;
-    
+
     if(b)
         vector_markes.push(a);
-    
+
     else {
         if(confirm("la parada ya esta dicionada en su ruta desea adicionarlo otra ves a   su  ruta ????\n se le aconseja no repetir  paradas"))
             vector_markes.push(a);
@@ -152,30 +152,30 @@ function adicionar(a)
 }
 function click_derecho(marker){
     /*************************adicionamos acciona  clic derecho del maus*************/
-        google.maps.event.addListener(marker, "rightclick", function() {
-            //en esta parte tenemos     que   modificar el  tipo de trazo o si se eliminara el marker
-            if(confirm("menu de marcador  " + marker.title +"?  \n   aceptar = cambiar trazo   \n cancelar = eliminar marcador")){
-                var t;
-                if (confirm("desea cambiar  el trazo del marcador " + marker.title +" con respecto de al anterior \n markador  aceptar = ruta de google\n cancelar = linea recta"))
-                    t="ruta";
-                else 
-                    t="linea";
-                if(vector_markes.length !=1){
-                    var p=0;
-                    for(var i = 0 ; i < vector_markes.length ; i++ )
-                        if(marker.title===vector_markes[i].title)p=i;
-                    trazo[p]=t;
-                    if(p-1>-1)
-                        mueve_marke(p-1,p);
-                    else 
-                        pasar_paradas_a_div();;
-                }
+    google.maps.event.addListener(marker, "rightclick", function() {
+        //en esta parte tenemos     que   modificar el  tipo de trazo o si se eliminara el marker
+        if(confirm("menu de marcador  " + marker.title +"?  \n   aceptar = cambiar trazo   \n cancelar = eliminar marcador")){
+            var t;
+            if (confirm("desea cambiar  el trazo del marcador " + marker.title +" con respecto de al anterior \n markador  aceptar = ruta de google\n cancelar = linea recta"))
+                t="ruta";
+            else
+                t="linea";
+            if(vector_markes.length !=1){
+                var p=0;
+                for(var i = 0 ; i < vector_markes.length ; i++ )
+                    if(marker.title===vector_markes[i].title)p=i;
+                trazo[p]=t;
+                if(p-1>-1)
+                    mueve_marke(p-1,p);
+                else
+                    pasar_paradas_a_div();;
             }
-            else {
-                alert("La funcion  eliminar no se creo todavia");
-            }
-        });
-        /*************************fi de accion clic derecho del maus********************/
+        }
+        else {
+            alert("La funcion  eliminar no se creo todavia");
+        }
+    });
+    /*************************fi de accion clic derecho del maus********************/
 }
 function pasar_paradas_a_div()
 {
@@ -187,21 +187,21 @@ function pasar_paradas_a_div()
     var pl=[];
     var nr_pt= nropuntos;
     var orden=0;
-        for(var u = 0 ; u < v_pol.length ; u++){
-            for(var w=0 ; w < v_pol[u].length ; w++ ){
-                pl.push(v_pol[u][w]);
-                cc=cc+"<option value='"+nr_pt+"'selected='true' >IDpunto</option>";
-                lt=lt+"<option value='"+v_pol[u][w].lat()+"'selected='true' >latitud punto</option>";
-                ln=ln+"<option value='"+v_pol[u][w].lng()+"'selected='true' >longitud punto</option>";
-                cod_parada=cod_parada+"<option value='"+vector_markes[u+1].title+"'selected='true' >longitud punto</option>";
-                //console.log("tiene "+nr_pt +"  "+idtramo+" "+vector_markes[u+1].title+"  "+orden);
-                //console.log("puntos "+nr_pt+"   "+v_pol[u][w].lat()+"    "+v_pol[u][w].lng());
-                //console.log("--------------------------------------------------------------------------");
-                //orden++;
-                nr_pt++;
-                //marker_prueva(v_pol[u][w]);
-            }
+    for(var u = 0 ; u < v_pol.length ; u++) {
+        for(var w=0 ; w < v_pol[u].length ; w++ ){
+            pl.push(v_pol[u][w]);
+            cc=cc+"<option value='"+nr_pt+"'selected='true' >IDpunto</option>";
+            lt=lt+"<option value='"+v_pol[u][w].lat()+"'selected='true' >latitud punto</option>";
+            ln=ln+"<option value='"+v_pol[u][w].lng()+"'selected='true' >longitud punto</option>";
+            cod_parada=cod_parada+"<option value='"+vector_markes[u+1].title+"'selected='true' >longitud punto</option>";
+            //console.log("tiene "+nr_pt +"  "+idtramo+" "+vector_markes[u+1].title+"  "+orden);
+            //console.log("puntos "+nr_pt+"   "+v_pol[u][w].lat()+"    "+v_pol[u][w].lng());
+            //console.log("--------------------------------------------------------------------------");
+            //orden++;
+            nr_pt++;
+            //marker_prueva(v_pol[u][w]);
         }
+    }
     console.log("v_ pol");
     console.log(v_pol);
     console.log("pl    -----");
@@ -215,7 +215,7 @@ function pasar_paradas_a_div()
     /************************pasamos la tabla formado_por ********************************/
 
     /************************pasamoslos datos a los  selectedmultiple para tiene**********/
-    cc="<select multiple  name ='idparada[]' style='display:none'>";
+    cc=cc + "<select multiple  name ='idparada[]' style='display:none'>"; // AQUI MODIFIQUE
     var tt=0;
     for(var i=0;i<vector_markes.length;i++){
         cc=cc+"<option value='"+vector_markes[i].title+"'selected='true' >IDPARADA</option>";
@@ -233,7 +233,7 @@ function pasar_paradas_a_div()
         cc=cc+"<option value='"+trazo[i]+"'selected='true' >trazo</option>";
     }
     cc=cc+"</select>";
-     
+
     /***********************hasta aqui terminamos de pasar los datos de tiene*************/
     /***********************adicionamos  latitud y longitud de  una  parada***************/
     cc+="<select multiple  name ='latitud[]' style='display:none'>";
@@ -249,7 +249,7 @@ function pasar_paradas_a_div()
         if(vector_markes[i].draggable)cc=cc+"<option value='"+vector_markes[i].getPosition().lng()+"'selected='true' >longitud</option>";
     }
     cc=cc+"</select>";
-     cc+="<select multiple  name ='cod_paradas_nuevas[]' style='display:none'>";
+    cc+="<select multiple  name ='cod_paradas_nuevas[]' style='display:none'>";
     for(var i=0;i<vector_markes.length;i++){
         if(vector_markes[i].draggable)cc=cc+"<option value='"+vector_markes[i].title+"'selected='true' >codparadas nuevas</option>";
     }

@@ -26,6 +26,7 @@ $cod_parada=$_REQUEST["codparada"];
 $orden=0;
 ///echo "Hola mundo";
 ///echo "tamanio : ". count($idpuntos);
+//echo "tamanioltps : ".count($nuevos);
 for($i=0;$i<count($idpuntos);$i++){
 	mysql_query("INSERT INTO `vico`.`formado_por` (`idpunto`, `idtramo`, `idparada`, `orden`) VALUES ('$idpuntos[$i]', '$_REQUEST[id_tramo]', '$idpuntos[$i]', '1');", $conexion) or die("Problemas en el select".mysql_error());
 	//mysql_query("INSERT INTO `vico`.`formado_por` (`idpunto`, `idtramo`, `idparada`, `orden`) VALUES ('".idpunto."', '$_REQUEST[id_tramo]', '".$idpunto[$i]."', '".$orden."');", $conexion) or die("Problemas en el select".mysql_error());
@@ -48,5 +49,5 @@ for($i=0;$i<count($latps);$i++){
 }
 */
 mysql_close($conexion);
-//header('Location: crear_tramo.php');
+header('Location: crear_tramo.php');
 ?>
