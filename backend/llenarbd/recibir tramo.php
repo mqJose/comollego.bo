@@ -17,12 +17,11 @@ for ($i=0;$i<count($nuevos);$i++){
 	
 	mysql_query("INSERT INTO `vico`.`parada` (`idparada`, `latitud`, `longitud`) VALUES ('$nuevos[$i]', '$latituds[$i]', '$longituds[$i]');", $conexion) or die("Problemas en el select".mysql_error());
 }
-//    adicionamos   fromado_por
-
-$idpuntos=$_REQUEST["idpuntos"];
-$ltps=$_REQUEST["lat_p"];
-$lnps=$_REQUEST["lng_p"];
-$cod_parada=$_REQUEST["codparada"];
+//    adicionamos   formado_por
+$idpuntos = $_REQUEST["idpuntos"];
+$ltps = $_REQUEST["lat_p"];
+$lnps = $_REQUEST["lng_p"];
+$cod_parada = $_REQUEST["codparada"];
 $orden=0;
 ///echo "Hola mundo";
 ///echo "tamanio : ". count($idpuntos);

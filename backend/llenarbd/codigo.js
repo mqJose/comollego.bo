@@ -51,32 +51,32 @@ function mueve_marke(x,y){
         console.log("detenemos timer");
     }
     if(trazo[y]!='linea'){
-         if(x>-1&&y<vector_markes.length){
+        if(x>-1&&y<vector_markes.length){
             var pol=[];
             var request = {
                 origin: vector_markes[x],
                 destination: vector_markes[y],
                 travelMode: google.maps.TravelMode.DRIVING
             };
-             directionsService.route(request, function(response, status) {
+            directionsService.route(request, function(response, status) {
                 if(status == google.maps.DirectionsStatus.OK){
-                    for(var j = 0; j < response.routes[0].overview_path.length; j++) 
+                    for(var j = 0; j < response.routes[0].overview_path.length; j++)
                         pol.push(response.routes[0].overview_path[j]);
                     v_pol[x]=pol;
                     if (rutaactual)
-                            rutaactual.setMap(null);
+                        rutaactual.setMap(null);
                     var pl=[];
                     for(var u = 0 ; u < v_pol.length ; u++){
                         for(var w=0 ; w < v_pol[u].length ; w++ )pl.push(v_pol[u][w]);
                     }
-                    rutaactual = new google.maps.Polyline({ 
+                    rutaactual = new google.maps.Polyline({
                         path: pl
                     });
                     console.log("*************");
                     console.log(vector_markes[y]);
                     console.log("------------");
                     console.log(pl[pl.length-1]);
-                    
+
                     console.log("pasa "+y);
                     //clearInterval(timer);
                     rutaactual.setMap(map);
@@ -85,12 +85,12 @@ function mueve_marke(x,y){
                     poly_guardado[valores]=pl;
                 }
             });
-         }
+        }
     }
     else {
         v_pol[x]=[];
         v_pol[x].push( vector_markes[y]);
-        
+
         if (rutaactual)
             rutaactual.setMap(null);
         var pl=[];
@@ -98,7 +98,7 @@ function mueve_marke(x,y){
             for(var w=0 ; w < v_pol[u].length ; w++ )
                 pl.push(v_pol[u][w]);
         }
-        rutaactual = new google.maps.Polyline({ 
+        rutaactual = new google.maps.Polyline({
             path: pl
         });
         timer = setInterval(function() {
@@ -117,13 +117,14 @@ function pasar_paradas_a_div()
     /************************pasamoslos datos a los  selectedmultiple para tiene**********/
     //console.log("Pasamos rutas a div");
 }
-function seleccionado(ele,p){
+
+function seleccionado(ele,p) {
     valores = ele.options[ele.selectedIndex].value;
     if(poly_guardado[valores]){
         console.log("guardado");
         if (rutaactual)
             rutaactual.setMap(null);
-        rutaactual = new google.maps.Polyline({ 
+        rutaactual = new google.maps.Polyline({
             path: poly_guardado[valores]
         });
         placeMarker(1,poly_guardado[valores][0],map,"INICIO");
@@ -145,12 +146,13 @@ function seleccionado(ele,p){
                     }
                 }
             }
+            console.log("\t" + i);
         }
         placeMarker(1,vector_markes[0],map,"INICIO");
         placeMarker(2,vector_markes[vector_markes.length-1],map,"FINAL");
         mueve_marke(0,1);
     }
-   
+
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
