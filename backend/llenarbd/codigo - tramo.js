@@ -10,7 +10,6 @@ var rutaactual; //esta variable es para  trabajar  con el poliline
 var v_pol=[];// tratamos de  crear una vector  de polilines que tiene la polilinea entre dos paradas
 var trazo=[];//el trazo generalmente se  el tipo recorido que tendra desde la parada actual hasta la parada anteriro  si es linea  o generado de  una ruta de google 
 function initialize() {
-    alert("vico");
     var mapOptions = {
         zoom: 14,
         center: new google.maps.LatLng(-16.5, -68.15)
@@ -202,11 +201,6 @@ function pasar_paradas_a_div()
             //marker_prueva(v_pol[u][w]);
         }
     }
-    console.log("v_ pol");
-    console.log(v_pol);
-    console.log("pl    -----");
-    console.log(pl);
-    console.log("................................");
     cod_parada=cod_parada+"</select>";
     lt=lt+"</select>";
     ln=ln+"</select>";

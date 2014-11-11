@@ -26,47 +26,30 @@
     <script type="text/javascript" src="codigo.js"></script>
     <script>
         /*************Aqui obtenemos todas las paradas de la base de datos *********/
+        var polilynes=[];
+        var paradas=[];
         <?php
             $con = mysqli_connect("localhost", "root", "123456", "vico") or die("Problemas con la conexion a la base de datos");
-            $registros = mysqli_query($con, "select * from parada") or die("Error en la consulta sql: ". mysqli_error($con));
-            $cantidaddepuntos = 0;
-            while ($reg = mysqli_fetch_array($registros)) {
-
-                $lat[$cantidaddepuntos] = $reg['latitud'];
-                $lng[$cantidaddepuntos] = $reg['longitud'];
-                $id[$cantidaddepuntos] = $reg['idparada'];
-                $cantidaddepuntos++;
-            }
-
-            //  obtenemos  los tramos
-            //cantidad de  tramos en $c_tramo
-            //ahora obtenemos datos de tiene
-            //cantidad de tiene   en $c_tiene
             $c_tiene=0;
-            $registros_ti = mysqli_query($con, "select * from tiene") or die("Error en la consulta sql: ". mysqli_error($con));
+            $registros_ti = mysqli_query($con, "select * from tramo") or die("Error en la consulta sql: ". mysqli_error($con));
             while ($regis = mysqli_fetch_array($registros_ti)) {
                 $idtramo[$c_tiene] = $regis['idtramo'];
-                $idparada[$c_tiene] = $regis['idparada'];
-                $trazo[$c_tiene] = $regis['trazo'];
                 $c_tiene++;
             }
-        ?>
-        /*************Aqui obtenemos todas las paradas de la base de datos *********/
-        var puntos =  [<?php
-        for($i = 0; $i < $cantidaddepuntos; $i++) {
-            if ($i != 0)
-                echo ",\n";
-            echo "new google.maps.LatLng($lat[$i], $lng[$i])";
-        }
-        ?>];
-        var id = [<?php
-            for($i = 0; $i < $cantidaddepuntos; $i++) {
-                if ($i != 0)
-                echo ", ";
-                echo "\"$id[$i]\"";
+            //aahora sacamos  el polilyne de cada tramo
+            for($i=0;$i<=$c_tiene;$i++){
+                echo "polilynes[".$i."]=[";
+                $registros_ti = mysqli_query($con, "SELECT p.latitud ,p.longitud  FROM formado_por fp, punto p WHERE fp.idtramo LIKE  '".$i."' AND fp.idpunto LIKE p.idpunto ") or die("Error en la consulta sql: ". mysqli_error($con));
+                $o=0;
+                while($regis = mysqli_fetch_array($registros_ti)){
+                    if ($o != 0)
+                        echo ", ";
+                    echo "new google.maps.LatLng(".$regis['latitud'].", ".$regis['longitud'].")";
+                    $o++;
+                }
+                echo "];\n";
             }
-        ?>];
-        //ahora obtenemos los valores de tiene
+        ?>
         var idtramo_tiene = [<?php
             for($i = 0; $i < $c_tiene; $i++) {
                 if ($i != 0)
@@ -74,25 +57,24 @@
                 echo "'$idtramo[$i]'";
             }
         ?>];
-        var idparada = [<?php
-            for($i = 0; $i < $c_tiene; $i++) {
-                if ($i != 0)
-                    echo ", ";
-                echo "'$idparada[$i]'";
+        //ahora tratamos de saar las paradas de cada tramo
+        /*
+        SELECT p.latitud, p.longitud FROM tiene t, parada p WHERE t.idtramo LIKE  '2' AND t.idparada LIKE p.idparada
+        */
+        <?php
+            for($i=0;$i<$c_tiene;$i++){
+                echo "paradas[".$i."]=[";
+                $registros_ti = mysqli_query($con, "SELECT p.latitud, p.longitud FROM tiene t, parada p WHERE t.idtramo LIKE  '".$idtramo[$i]."' AND t.idparada LIKE p.idparada") or die("Error en la consulta sql: ". mysqli_error($con));
+                $o=0;
+                while($regis = mysqli_fetch_array($registros_ti)){
+                    if ($o != 0)
+                        echo ", ";
+                    echo "new google.maps.LatLng(".$regis['latitud'].", ".$regis['longitud'].")";
+                    $o++;
+                }
+                echo "];\n";
             }
-        ?>];
-        var trazo_t = [<?php
-            for($i = 0; $i < $c_tiene; $i++) {
-                if ($i != 0)
-                    echo ", ";
-                echo "'$trazo[$i]'";
-            }
-        ?>];
-        function guarda_ruta() {
-            console.log(tramo);
-            alert("la  Ruta ya fue guardada  en nuesta base de datos");
-        }
-
+        ?>
     </script>
 </head>
 <body>
@@ -129,7 +111,7 @@
 <div id="panel" style="float:left;width:30%;height:90%;">
     <form action="recibir ruta.php" method="post">
         <fieldset>
-            <legend>Datos de nuevo sindicato</legend>
+            <legend>Datos de nueva Ruta</legend>
             <label  style="width: 15%;float: left;">Nombre :</label>
             <input type="text" style="width: 25%;float: left;"name="nombre" id="nombre" ><i>   (introdusca el codigo de la linea por <br> ejemplos 398,linea roja-z,663) </i>
             <?php
@@ -139,14 +121,13 @@
 
             while ($rexx = mysqli_fetch_array($reggg)) {
                 $nro = $rexx['nro'];
-
             }
             $nro++;
             ?>
             <input type="hidden" name="codnombre" id="codnombre"value=<?php echo $nro; ?>>
             <p>
                 <label  style="width: 15%;float: left;">tipo</label>
-                <select id="tipo" name="tipo_transporte" style="width: 25%;float: left;"onclick="actualiza();">
+                <select id="tipo" name="tipo_transporte" style="width: 25%;float: left;">
                     <option value="Bus">Bus</option>
                     <option value="Micro">Micro</option>
                     <option value="Minibus">Minibus</option>
@@ -191,13 +172,14 @@
                             }
                             ?>
                         </select>
-                        <div id="prueva" >  </div>
                         <i>(si no encuentra el tramo necesario para su ruta puede crear un nuevo tramo ) </i>
-                        <b>
-                            <div id="panel_de_paradas" style="float:left;width:100%;height:70%;"></div>
+                        <p>
+                        <input type="button" onclick="pasar_tramo_a_div()" value="Adicionar el tramo la ruta.." style='width:240px; height:25px'>
+                        <p>
+                        <div id="panel_cod_tramos" style="float:left;width:100%;height:70%;"></div>
         </fieldset>
         <P>
-            <INPUT type="submit" onclick="guarda_ruta();"value="Enviar" ><INPUT type="reset">
+            <INPUT type="submit" value="Enviar" >
     </form>
 </div>
 

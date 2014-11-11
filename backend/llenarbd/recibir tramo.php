@@ -21,14 +21,13 @@ for ($i=0;$i<count($nuevos);$i++){
 $idpuntos = $_REQUEST["idpuntos"];
 $ltps = $_REQUEST["lat_p"];
 $lnps = $_REQUEST["lng_p"];
-$cod_parada = $_REQUEST["codparada"];
-$orden=0;
+$cod_parada = $_REQUEST["cod_parada"];
 ///echo "Hola mundo";
 ///echo "tamanio : ". count($idpuntos);
 //echo "tamanioltps : ".count($nuevos);
 for($i=0;$i<count($idpuntos);$i++){
-	mysql_query("INSERT INTO `vico`.`formado_por` (`idpunto`, `idtramo`, `idparada`, `orden`) VALUES ('$idpuntos[$i]', '$_REQUEST[id_tramo]', '$idpuntos[$i]', '1');", $conexion) or die("Problemas en el select".mysql_error());
-	//mysql_query("INSERT INTO `vico`.`formado_por` (`idpunto`, `idtramo`, `idparada`, `orden`) VALUES ('".idpunto."', '$_REQUEST[id_tramo]', '".$idpunto[$i]."', '".$orden."');", $conexion) or die("Problemas en el select".mysql_error());
+	mysql_query("INSERT INTO `vico`.`formado_por` (`idpunto`, `idtramo`, `idparada`, `orden`) VALUES ('$idpuntos[$i]', '$_REQUEST[id_tramo]', '$cod_parada[$i]', '$i');", $conexion) or die("Problemas en el select".mysql_error());
+	mysql_query("INSERT INTO `vico`.`punto` (`idpunto`, `latitud`, `longitud`) VALUES ('$idpuntos[$i]', '$ltps[$i]', '$lnps[$i]');", $conexion) or die("Problemas en el select".mysql_error());
     /// echo $idpuntos[$i];
 	$orden++;
 	//$idpuntos++;

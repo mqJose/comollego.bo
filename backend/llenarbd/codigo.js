@@ -1,18 +1,16 @@
-
-var vector_markes=[];
-var trazo=[];
-var v_pol=[];
 var map;
 var directionsService = new google.maps.DirectionsService();
 var rutaactual;
-var valores;
-var pos;
-var poly_guardado=[];
-var timer;
+var offset;
 var marker_i;
 var marker_f;
+var tramo=0;
+var rutatotal;
+var polilyne_t=[];
+var cod_tramos=[];
+var marker_paradas=[];
+var timer;
 function initialize() {
-    alert("alerta");
     var mapOptions = {
         zoom: 14,
         center: new google.maps.LatLng(-16.5, -68.15)
@@ -21,138 +19,122 @@ function initialize() {
 }
 function placeMarker(e,pos, map,titulo) {
     if(e===1){
-        if(marker_i)marker_i.setMap(null);
+        if(marker_i)
+			 marker_i.setMap(null);
         marker_i = new google.maps.Marker({
             position: pos,
             map: map,
             title:titulo,
             draggable:false
         });
+        var popup = new google.maps.InfoWindow({
+            content: "   Inicio   "
+        });
+
+        popup.open(map,marker_i);
+         map.panTo(pos);//pociciona el  mapa sobre el marker 
     }
     else{
-        if(marker_f)marker_f.setMap(null);
+        if(marker_f)
+			marker_f.setMap(null);
         marker_f = new google.maps.Marker({
             position: pos,
             map: map,
             title:titulo,
             draggable:false
         });
-    }
-    //map.panTo(pos);//pociciona el  mapa sobre el marker   
+    }  
 }
-function mueve_marke(x,y){
-    if(y===trazo.length){
-        clearInterval(timer);
-        rutaactual.setMap(map);
-        timer = setInterval(function() {
-            //tiempo
-        }, 100);
-        clearInterval(timer);
-        console.log("detenemos timer");
-    }
-    if(trazo[y]!='linea'){
-        if(x>-1&&y<vector_markes.length){
-            var pol=[];
-            var request = {
-                origin: vector_markes[x],
-                destination: vector_markes[y],
-                travelMode: google.maps.TravelMode.DRIVING
-            };
-            directionsService.route(request, function(response, status) {
-                if(status == google.maps.DirectionsStatus.OK){
-                    for(var j = 0; j < response.routes[0].overview_path.length; j++)
-                        pol.push(response.routes[0].overview_path[j]);
-                    v_pol[x]=pol;
-                    if (rutaactual)
-                        rutaactual.setMap(null);
-                    var pl=[];
-                    for(var u = 0 ; u < v_pol.length ; u++){
-                        for(var w=0 ; w < v_pol[u].length ; w++ )pl.push(v_pol[u][w]);
-                    }
-                    rutaactual = new google.maps.Polyline({
-                        path: pl
-                    });
-                    console.log("*************");
-                    console.log(vector_markes[y]);
-                    console.log("------------");
-                    console.log(pl[pl.length-1]);
-
-                    console.log("pasa "+y);
-                    //clearInterval(timer);
-                    rutaactual.setMap(map);
-                    mueve_marke(x+1,y+1);
-                    pasar_paradas_a_div();
-                    poly_guardado[valores]=pl;
-                }
-            });
-        }
-    }
-    else {
-        v_pol[x]=[];
-        v_pol[x].push( vector_markes[y]);
-
-        if (rutaactual)
-            rutaactual.setMap(null);
-        var pl=[];
-        for(var u = 0 ; u < v_pol.length ; u++){
-            for(var w=0 ; w < v_pol[u].length ; w++ )
-                pl.push(v_pol[u][w]);
-        }
-        rutaactual = new google.maps.Polyline({
-            path: pl
-        });
-        timer = setInterval(function() {
-            //tiempo
-        }, 100);
-        //clearInterval(timer);
-        rutaactual.setMap(map);
-        mueve_marke(x+1,y+1);
-        pasar_paradas_a_div();
-        poly_guardado[valores]=pl;
-    }
-
-}
-function pasar_paradas_a_div()
+function pasar_tramo_a_div()
 {
-    /************************pasamoslos datos a los  selectedmultiple para tiene**********/
-    //console.log("Pasamos rutas a div");
+    if(tramo>0&&tramo<=idtramo_tiene.length){
+        console.log("adicionamos a la lista el tramo "+tramo);
+        if(rutatotal)
+            rutatotal.setMap(null);
+        cod_tramos.push(""+tramo);
+        for(var i=0;i<polilynes[tramo].length;i++)
+            polilyne_t.push(polilynes[tramo][i]);
+        rutatotal = new google.maps.Polyline({
+            path: polilyne_t,
+            strokeOpacity: 2.0,
+            strokeColor: 'blue'
+        });
+        rutatotal.setMap(map);
+        //en la variable c creamos la tabla q se mostrara 
+        //  en la variable cc nos ayudara  a pasar los datos  la  base de datos
+        var c="<i>lista de tramos que tendra la nueva ruta</i><b><table border =1px style='width: 100%;'>";
+        c=c+"<tr><td><i>nro </i></td><td><i>tramo</i></td></tr>";
+        for(var i=0;i<cod_tramos.length;i++){
+          c=c+"<tr><td>"+(i+1)+"</td><td> .-  Tramo "+cod_tramos[i]+"</td></tr>";
+        }
+        c=c+"</table>";
+        c=c+"<select multiple  name ='cod_tramos[]' style='display:none'>";
+        for(var i=0;i<cod_tramos.length;i++){
+          c=c+"<option value='"+cod_tramos[i]+"'selected='true' >codparadas nuevas</option>";
+        }
+        c=c+"</select>";
+        document.getElementById("panel_cod_tramos").innerHTML =c;
+    }
+    else alert("el tramo no fue seleccionado");
+    tramo=-1;
+    if (rutaactual)
+      rutaactual.setMap(null);
 }
 
 function seleccionado(ele,p) {
-    valores = ele.options[ele.selectedIndex].value;
-    if(poly_guardado[valores]){
-        console.log("guardado");
-        if (rutaactual)
+    clearInterval(timer);
+    var n = ele.options[ele.selectedIndex].value;
+    for(var i=0;i<marker_paradas.length;i++)
+        marker_paradas[i].setMap(null);
+      marker_paradas=[];
+    for(var i=0;i<paradas[n-1].length;i++){
+        marker_paradas.push(
+          new google.maps.Marker({
+            position: paradas[n-1][i],
+            map: map
+          })
+        );
+         marker_paradas[i].setIcon('http://www.rubipamplona.com/img/marker.png');
+    }
+
+
+    tramo  = n;
+     if (rutaactual)
             rutaactual.setMap(null);
-        rutaactual = new google.maps.Polyline({
-            path: poly_guardado[valores]
-        });
-        placeMarker(1,poly_guardado[valores][0],map,"INICIO");
-        placeMarker(2,poly_guardado[valores][poly_guardado[valores].length-1],map,"FINAL");
-        rutaactual.setMap(map);
-    }
-    else{
-        vector_markes=[];
-        trazo=[];
-        v_pol=[];
-        rutaactual;
-        pos=0;
-        for(var i=0;i<idtramo_tiene.length;i++){
-            if(""+valores===idtramo_tiene[i]){
-                for(var j=0;j<id.length;j++){
-                    if(idparada[i]===id[j]){
-                        trazo.push(trazo_t[i]);
-                        vector_markes.push(puntos[j]);
-                    }
-                }
-            }
-            console.log("\t" + i);
-        }
-        placeMarker(1,vector_markes[0],map,"INICIO");
-        placeMarker(2,vector_markes[vector_markes.length-1],map,"FINAL");
-        mueve_marke(0,1);
-    }
-
+    placeMarker(1,polilynes[n][0], map,"Inicio");
+    placeMarker(2,polilynes[n][polilynes[n].length-1], map,"Final");
+    rutaactual = new google.maps.Polyline({
+      path: polilynes[n],
+      //geodesic: true,
+      strokeOpacity: 0.0,
+      strokeColor: 'red',
+      icons: [{
+        icon: {
+          path: 'M -1,1 0,0 1,1',
+          strokeOpacity: 1,
+          strokeWeight: 1.5,
+          scale: 6
+        },
+        repeat: '10px'
+      }],
+      map: map,
+    });
+    offset = 0;
+    start();
+    rutaactual.setMap(map);
 }
-
+function start() {
+    timer = setInterval(function() {
+        animacion();
+    }, 50);
+}
+  function animacion() {
+    if(offset== 9) 
+      offset= 0;
+     else 
+      offset++;
+    var icons = rutaactual.get('icons');
+    icons[0].offset = offset + 'px';
+    rutaactual.set('icons', icons); 
+  }
 google.maps.event.addDomListener(window, 'load', initialize);
