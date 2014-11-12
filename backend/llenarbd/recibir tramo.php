@@ -1,13 +1,14 @@
 <?php
-$conexion = mysql_connect("localhost", "root", "123456") or die("Problemas con la conexion");
-mysql_select_db("vico", $conexion) or die("Problemas en la seleccion de la base de datos");
-mysql_query("INSERT INTO `vico`.`tramo` (`idtramo`) VALUES ('$_REQUEST[id_tramo]')", $conexion) or die("Problemas en el select".mysql_error());
+require_once 'archivodeconexion.php';
+$conexion = obtenerconexion();
+
+mysqli_query($conexion, "INSERT INTO `vico`.`tramo` (`idtramo`, `referencia`) VALUES ('$_REQUEST[id_tramo]', '$_REQUEST[referencia]')") or die("Problemas al insertar en la base de datos".mysqli_error($conexion));
 $idparadas=$_REQUEST["idparada"];
 $tiempos=$_REQUEST["tiempo"];
 $trazos=$_REQUEST["trazo"];
 for ($i=0;$i<count($idparadas);$i++){
 	
-	mysql_query("INSERT INTO `vico`.`tiene` (`idtramo`, `idparada`, `tiempo`, `trazo`) VALUES ('$_REQUEST[id_tramo]', '$idparadas[$i]',  '$tiempos[$i]',  '$trazos[$i]');", $conexion) or die("Problemas en el select".mysql_error());
+	mysqli_query($conexion, "INSERT INTO `vico`.`tiene` (`idtramo`, `idparada`, `tiempo`, `trazo`) VALUES ('$_REQUEST[id_tramo]', '$idparadas[$i]',  '$tiempos[$i]',  '$trazos[$i]');") or die("Problemas en el select".mysqli_error($conexion));
 }
 
 $nuevos=$_REQUEST["cod_paradas_nuevas"];
@@ -15,7 +16,7 @@ $latituds=$_REQUEST["latitud"];
 $longituds=$_REQUEST["longitud"];
 for ($i=0;$i<count($nuevos);$i++){
 	
-	mysql_query("INSERT INTO `vico`.`parada` (`idparada`, `latitud`, `longitud`) VALUES ('$nuevos[$i]', '$latituds[$i]', '$longituds[$i]');", $conexion) or die("Problemas en el select".mysql_error());
+	mysqli_query($conexion, "INSERT INTO `vico`.`parada` (`idparada`, `latitud`, `longitud`) VALUES ('$nuevos[$i]', '$latituds[$i]', '$longituds[$i]');") or die("Problemas en el select".mysqli_error($conexion));
 }
 //    adicionamos   formado_por
 $idpuntos = $_REQUEST["idpuntos"];
@@ -26,8 +27,8 @@ $cod_parada = $_REQUEST["cod_parada"];
 ///echo "tamanio : ". count($idpuntos);
 //echo "tamanioltps : ".count($nuevos);
 for($i=0;$i<count($idpuntos);$i++){
-	mysql_query("INSERT INTO `vico`.`formado_por` (`idpunto`, `idtramo`, `idparada`, `orden`) VALUES ('$idpuntos[$i]', '$_REQUEST[id_tramo]', '$cod_parada[$i]', '$i');", $conexion) or die("Problemas en el select".mysql_error());
-	mysql_query("INSERT INTO `vico`.`punto` (`idpunto`, `latitud`, `longitud`) VALUES ('$idpuntos[$i]', '$ltps[$i]', '$lnps[$i]');", $conexion) or die("Problemas en el select".mysql_error());
+	mysqli_query($conexion, "INSERT INTO `vico`.`formado_por` (`idpunto`, `idtramo`, `idparada`, `orden`) VALUES ('$idpuntos[$i]', '$_REQUEST[id_tramo]', '$cod_parada[$i]', '$i');") or die("Problemas en el select".mysqli_error($conexion));
+	mysqli_query($conexion, "INSERT INTO `vico`.`punto` (`idpunto`, `latitud`, `longitud`) VALUES ('$idpuntos[$i]', '$ltps[$i]', '$lnps[$i]');") or die("Problemas en el select".mysqli_error($conexion));
     /// echo $idpuntos[$i];
 	$orden++;
 	//$idpuntos++;
@@ -46,6 +47,6 @@ for($i=0;$i<count($latps);$i++){
 	//$nro_puntos++;
 }
 */
-mysql_close($conexion);
+//mysqli_close($conexion);
 header('Location: crear_tramo.php');
 ?>

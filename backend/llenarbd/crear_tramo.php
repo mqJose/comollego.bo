@@ -116,6 +116,10 @@
             <legend>datos de nuevo tramo</legend>
             <b>
                 <label  style="width: 55%;float: left;">codtramo : <?php echo $nro; ?></label>
+                <br>
+                <label >Referencia: </label>
+                <input type="text" name="referencia" id="referencia">
+
                 <input type="hidden" name="id_tramo" id="id_tramo"value=<?php echo $nro; ?>>
                 <b>
                     <div id="panel_de_paradas" style="float:left;width:100%;height:70%;"></div>

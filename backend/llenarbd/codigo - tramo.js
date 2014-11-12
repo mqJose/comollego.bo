@@ -54,6 +54,7 @@ function placeMarker(pos, map, x,f) {
         marker.setIcon('https://maps.gstatic.com/intl/es_ALL/mapfiles/ms/micons/cabs.png');
     else
         marker.setIcon('http://www.rubipamplona.com/img/marker.png');
+
     google.maps.event.addListener(marker, 'click', function() {
         //Aqui debemos adicionar a la lista
         if(!f){
@@ -167,7 +168,7 @@ function click_derecho(marker){
                 if(p-1>-1)
                     mueve_marke(p-1,p);
                 else
-                    pasar_paradas_a_div();;
+                    pasar_paradas_a_div();
             }
         }
         else {
@@ -184,7 +185,7 @@ function pasar_paradas_a_div()
     var ln="<select multiple  name ='lng_p[]' style='display:none'>";
     var cod_parada="<select multiple  name ='cod_parada[]' style='display:none'>";
     var pl=[];
-    var nr_pt= nropuntos;
+    var nr_pt = nropuntos;
     var orden=0;
     for(var u = 0 ; u < v_pol.length ; u++) {
         for(var w=0 ; w < v_pol[u].length ; w++ ){
