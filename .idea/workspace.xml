@@ -5,7 +5,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/backend/vico (2).sql" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/probando.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/llenarbd/crear ruta.php" afterPath="$PROJECT_DIR$/backend/llenarbd/crear ruta.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/llenarbd/crear_tramo.php" afterPath="$PROJECT_DIR$/backend/llenarbd/crear_tramo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/comollego.bo/lista de rutas.php" afterPath="$PROJECT_DIR$/backend/comollego.bo/lista de rutas.php" />
     </list>
     <ignored path="comollego.bo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,22 +71,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crear ruta.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="crear ruta.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/llenarbd/crear ruta.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33205375" vertical-offset="1867" max-vertical-offset="3536">
-              <caret line="120" column="96" selection-start-line="120" selection-start-column="96" selection-end-line="120" selection-end-column="96" />
+            <state vertical-scroll-proportion="-1.879518" vertical-offset="1918" max-vertical-offset="3536">
+              <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
               <folding>
-                <element signature="e#7815#8548#0#PHP" expanded="true" />
+                <element signature="e#7686#8419#0#PHP" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#p#0;n#b#0;n#b#0;n#p#1;n#fieldset#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#b#0;n#b#0;n#p#1;n#fieldset#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1415815540307" expanded="true" signature="1264:1283" placeholder="select * fro..tramo..." />
-                <marker date="1415815540307" expanded="true" signature="1820:1940" placeholder="SELECT p.lat..formado_por..." />
-                <marker date="1415815540307" expanded="true" signature="2912:3035" placeholder="SELECT p.lat..tiene..." />
-                <marker date="1415815540307" expanded="true" signature="5368:5463" placeholder="SELECT SUM( ..idlinea..." />
-                <marker date="1415815540307" expanded="true" signature="5399:5461" placeholder="SELECT idlin..." />
-                <marker date="1415815540307" expanded="true" signature="6637:6700" placeholder="SELECT nombr..." />
-                <marker date="1415815540307" expanded="true" signature="7970:7998" placeholder="SELECT idtra..." />
+                <marker date="1415815779467" expanded="true" signature="1264:1283" placeholder="select * fro..tramo..." />
+                <marker date="1415815779467" expanded="true" signature="1820:1940" placeholder="SELECT p.lat..formado_por..." />
+                <marker date="1415815779467" expanded="true" signature="2912:3035" placeholder="SELECT p.lat..tiene..." />
+                <marker date="1415815779467" expanded="true" signature="5239:5334" placeholder="SELECT SUM( ..idlinea..." />
+                <marker date="1415815779467" expanded="true" signature="5270:5332" placeholder="SELECT idlin..." />
+                <marker date="1415815779467" expanded="true" signature="6508:6571" placeholder="SELECT nombr..." />
+                <marker date="1415815779467" expanded="true" signature="7841:7869" placeholder="SELECT idtra..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lista de rutas.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/comollego.bo/lista de rutas.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4018018" vertical-offset="1630" max-vertical-offset="5083">
+              <caret line="109" column="4" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
+              <folding>
+                <marker date="1415815799991" expanded="true" signature="2233:2344" placeholder="select p.lat..parada..." />
+                <marker date="1415815799991" expanded="true" signature="2983:3096" placeholder="select p.lat..parada..." />
+                <marker date="1415815799991" expanded="true" signature="3298:3411" placeholder="select p.lat..parada..." />
+                <marker date="1415815799991" expanded="true" signature="4224:4249" placeholder="select idtra..tramo..." />
+                <marker date="1415815799991" expanded="true" signature="4453:4593" placeholder="select p.lat..parada..." />
               </folding>
             </state>
           </provider>
@@ -150,6 +166,7 @@
         <option value="$PROJECT_DIR$/backend/llenarbd/codigo.js" />
         <option value="$PROJECT_DIR$/backend/llenarbd/crear_tramo.php" />
         <option value="$PROJECT_DIR$/backend/llenarbd/crear ruta.php" />
+        <option value="$PROJECT_DIR$/backend/comollego.bo/lista de rutas.php" />
       </list>
     </option>
   </component>
@@ -234,6 +251,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="llenarbd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comollego.bo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comollego.bo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comollego.bo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -615,14 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/comollego.bo/lista de rutas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384" vertical-offset="1020" max-vertical-offset="5049">
-          <caret line="63" column="38" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/llenarbd/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="1122">
@@ -743,19 +770,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/llenarbd/crear ruta.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33205375" vertical-offset="1867" max-vertical-offset="3536">
-          <caret line="120" column="96" selection-start-line="120" selection-start-column="96" selection-end-line="120" selection-end-column="96" />
+        <state vertical-scroll-proportion="-1.879518" vertical-offset="1918" max-vertical-offset="3536">
+          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
           <folding>
-            <element signature="e#7815#8548#0#PHP" expanded="true" />
+            <element signature="e#7686#8419#0#PHP" expanded="true" />
             <element signature="n#style#0;n#input#0;n#p#0;n#b#0;n#b#0;n#p#1;n#fieldset#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#b#0;n#b#0;n#p#1;n#fieldset#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1415815540307" expanded="true" signature="1264:1283" placeholder="select * fro..tramo..." />
-            <marker date="1415815540307" expanded="true" signature="1820:1940" placeholder="SELECT p.lat..formado_por..." />
-            <marker date="1415815540307" expanded="true" signature="2912:3035" placeholder="SELECT p.lat..tiene..." />
-            <marker date="1415815540307" expanded="true" signature="5368:5463" placeholder="SELECT SUM( ..idlinea..." />
-            <marker date="1415815540307" expanded="true" signature="5399:5461" placeholder="SELECT idlin..." />
-            <marker date="1415815540307" expanded="true" signature="6637:6700" placeholder="SELECT nombr..." />
-            <marker date="1415815540307" expanded="true" signature="7970:7998" placeholder="SELECT idtra..." />
+            <marker date="1415815779467" expanded="true" signature="1264:1283" placeholder="select * fro..tramo..." />
+            <marker date="1415815779467" expanded="true" signature="1820:1940" placeholder="SELECT p.lat..formado_por..." />
+            <marker date="1415815779467" expanded="true" signature="2912:3035" placeholder="SELECT p.lat..tiene..." />
+            <marker date="1415815779467" expanded="true" signature="5239:5334" placeholder="SELECT SUM( ..idlinea..." />
+            <marker date="1415815779467" expanded="true" signature="5270:5332" placeholder="SELECT idlin..." />
+            <marker date="1415815779467" expanded="true" signature="6508:6571" placeholder="SELECT nombr..." />
+            <marker date="1415815779467" expanded="true" signature="7841:7869" placeholder="SELECT idtra..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/comollego.bo/lista de rutas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4018018" vertical-offset="1630" max-vertical-offset="5083">
+          <caret line="109" column="4" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
+          <folding>
+            <marker date="1415815799991" expanded="true" signature="2233:2344" placeholder="select p.lat..parada..." />
+            <marker date="1415815799991" expanded="true" signature="2983:3096" placeholder="select p.lat..parada..." />
+            <marker date="1415815799991" expanded="true" signature="3298:3411" placeholder="select p.lat..parada..." />
+            <marker date="1415815799991" expanded="true" signature="4224:4249" placeholder="select idtra..tramo..." />
+            <marker date="1415815799991" expanded="true" signature="4453:4593" placeholder="select p.lat..parada..." />
           </folding>
         </state>
       </provider>

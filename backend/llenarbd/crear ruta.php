@@ -120,7 +120,7 @@
             <label  style="width: 15%;float: left;">Nombre :</label>
             <input type="text" style="width: 25%;float: left;"name="nombre" id="nombre" required><i>   (introdusca el codigo de la linea por <br> ejemplos 398,linea roja-z,663) </i>
             <?php
-            //$co = mysqli_connect("localhost", "root", "123456", "vico") or die("Problemas con la conexion a la base de datos");
+
             require_once 'archivodeconexion.php';
             $co = obtenerconexion();
             $reggg = mysqli_query($co, "SELECT SUM( s.n ) as nro FROM (SELECT idlinea, COUNT( * ) AS n FROM  `linea` GROUP BY idlinea)s") or die("Error en la consulta sql: ". mysqli_error($co));

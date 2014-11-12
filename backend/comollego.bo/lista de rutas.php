@@ -107,7 +107,9 @@ if(transporte==='PUBLICO'){
 
     ///fin de creacion de funciones
     <?php
-    $con = mysqli_connect("localhost", "root", "123456", "vico") or die("Problemas con la conexion a la base de datos");
+    
+    require_once 'archivodeconexion.php';
+    $con = obtenerconexion();
     $tramo = mysqli_query($con, "select idtramo from tramo") or die("Error en la consulta sql: ". mysqli_error($con));
     $n = 0;
     //en aqui sacamos todos los id de tramos
