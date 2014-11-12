@@ -27,7 +27,9 @@
     <script>
         /*************Aqui obtenemos todas las paradas de la base de datos *********/
             <?php
-            $con = mysqli_connect("localhost", "root", "123456", "vico") or die("Problemas con la conexion a la base de datos");
+            include_once 'archivodeconexion.php';
+            $con = obtenerconexion();
+
             $registros = mysqli_query($con, "select * from parada") or die("Error en la consulta sql: ". mysqli_error($con));
             $cantidaddepuntos = 0;
 

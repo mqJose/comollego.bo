@@ -29,7 +29,8 @@
         var polilynes=[];
         var paradas=[];
         <?php
-            $con = mysqli_connect("localhost", "root", "123456", "vico") or die("Problemas con la conexion a la base de datos");
+            require_once 'archivodeconexion.php';
+            $con = obtenerconexion();
             $c_tiene=0;
             $registros_ti = mysqli_query($con, "select * from tramo") or die("Error en la consulta sql: ". mysqli_error($con));
             while ($regis = mysqli_fetch_array($registros_ti)) {

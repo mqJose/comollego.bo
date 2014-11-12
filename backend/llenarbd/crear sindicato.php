@@ -66,7 +66,9 @@
                 <label  style="width: 15%;float: left;">Nombre :</label>
                 <input type="text" style="width: 25%;float: left;"name="nombre" id="nombre" ><i>   (introdusca  el nombre del sindicato ejemplo simon bolivar, exposur) </i>
                 <?php
-                    $co = mysqli_connect("localhost", "root", "123456", "vico") or die("Problemas con la conexion a la base de datos");
+                    require_once 'archivodeconexion.php';
+                    $co = obtenerconexion();
+
                     $reggg = mysqli_query($co, "SELECT SUM( s.n ) as nro FROM (SELECT idsindicato, COUNT( * ) AS n FROM  `sindicato` GROUP BY idsindicato)s") or die("Error en la consulta sql: ". mysqli_error($co));
                     
 
@@ -90,7 +92,9 @@
                 <p>
                 <i>lista de sindicatos que actualmente estan en nuestra  base de datos</i>
                 <?php
-                $con = mysqli_connect("localhost", "root", "123456", "vico") or die("Problemas con la conexion a la base de datos");
+                require_once 'archivodeconexion.php';
+
+                $con = obtenerconexion();
                 $registros = mysqli_query($con, "SELECT * FROM `sindicato` order by idsindicato asc") or die("Error en la consulta sql: ". mysqli_error($con));
                 $cantidaddepuntos = 0;
                 while ($reg = mysqli_fetch_array($registros)) {
