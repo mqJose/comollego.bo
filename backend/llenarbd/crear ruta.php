@@ -118,7 +118,7 @@
         <fieldset>
             <legend>Datos de nueva Ruta</legend>
             <label  style="width: 15%;float: left;">Nombre :</label>
-            <input type="text" style="width: 25%;float: left;"name="nombre" id="nombre" ><i>   (introdusca el codigo de la linea por <br> ejemplos 398,linea roja-z,663) </i>
+            <input type="text" style="width: 25%;float: left;"name="nombre" id="nombre" required><i>   (introdusca el codigo de la linea por <br> ejemplos 398,linea roja-z,663) </i>
             <?php
             //$co = mysqli_connect("localhost", "root", "123456", "vico") or die("Problemas con la conexion a la base de datos");
             require_once 'archivodeconexion.php';

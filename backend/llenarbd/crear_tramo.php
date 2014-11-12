@@ -118,7 +118,7 @@
                 <label  style="width: 55%;float: left;">codtramo : <?php echo $nro; ?></label>
                 <br>
                 <label >Referencia: </label>
-                <input type="text" name="referencia" id="referencia">
+                <input type="text" name="referencia" id="referencia" required>
 
                 <input type="hidden" name="id_tramo" id="id_tramo"value=<?php echo $nro; ?>>
                 <b>
