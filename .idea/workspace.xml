@@ -4,8 +4,9 @@
     <list default="true" id="512ab161-ea07-4bc4-abf8-0e3cd5328d4c" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/backend/vico (2).sql" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/probando.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/llenarbd/crear ruta.php" afterPath="$PROJECT_DIR$/backend/llenarbd/crear ruta.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/comollego.bo/lista de rutas.php" afterPath="$PROJECT_DIR$/backend/comollego.bo/lista de rutas.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/llenarbd/recibir ruta.php" afterPath="$PROJECT_DIR$/backend/llenarbd/recibir ruta.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="comollego.bo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +34,7 @@
       <file leaf-file-name="crear_tramo.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/llenarbd/crear_tramo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.3855422" vertical-offset="1842" max-vertical-offset="2363">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1842" max-vertical-offset="2363">
               <caret line="120" column="77" selection-start-line="120" selection-start-column="77" selection-end-line="120" selection-end-column="77" />
               <folding>
                 <marker date="1415815354635" expanded="true" signature="1197:1217" placeholder="select * fro..parada..." />
@@ -58,7 +59,7 @@
       <file leaf-file-name="recibir tramo.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/llenarbd/recibir tramo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="986">
+            <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="986">
               <caret line="4" column="130" selection-start-line="4" selection-start-column="130" selection-end-line="4" selection-end-column="130" />
               <folding>
                 <marker date="1415812105507" expanded="true" signature="101:209" placeholder="INSERT INTO ..." />
@@ -74,12 +75,10 @@
       <file leaf-file-name="crear ruta.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/llenarbd/crear ruta.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.879518" vertical-offset="1918" max-vertical-offset="3536">
-              <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+            <state vertical-scroll-proportion="-8.269231" vertical-offset="1757" max-vertical-offset="3536">
+              <caret line="116" column="27" selection-start-line="116" selection-start-column="27" selection-end-line="116" selection-end-column="27" />
               <folding>
                 <element signature="e#7686#8419#0#PHP" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#p#0;n#b#0;n#b#0;n#p#1;n#fieldset#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#b#0;n#b#0;n#p#1;n#fieldset#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <marker date="1415815779467" expanded="true" signature="1264:1283" placeholder="select * fro..tramo..." />
                 <marker date="1415815779467" expanded="true" signature="1820:1940" placeholder="SELECT p.lat..formado_por..." />
                 <marker date="1415815779467" expanded="true" signature="2912:3035" placeholder="SELECT p.lat..tiene..." />
@@ -92,17 +91,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lista de rutas.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="recibir ruta.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/llenarbd/recibir ruta.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.27567568" vertical-offset="0" max-vertical-offset="555">
+              <caret line="9" column="141" selection-start-line="9" selection-start-column="141" selection-end-line="9" selection-end-column="141" />
+              <folding>
+                <marker date="1415848655641" expanded="true" signature="291:478" placeholder="INSERT INTO ..." />
+                <marker date="1415848655641" expanded="true" signature="636:750" placeholder="INSERT INTO ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lista de rutas.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/comollego.bo/lista de rutas.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4018018" vertical-offset="1630" max-vertical-offset="5083">
-              <caret line="109" column="4" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
+            <state vertical-scroll-proportion="-14.461538" vertical-offset="1477" max-vertical-offset="5083">
+              <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
               <folding>
-                <marker date="1415815799991" expanded="true" signature="2233:2344" placeholder="select p.lat..parada..." />
-                <marker date="1415815799991" expanded="true" signature="2983:3096" placeholder="select p.lat..parada..." />
-                <marker date="1415815799991" expanded="true" signature="3298:3411" placeholder="select p.lat..parada..." />
-                <marker date="1415815799991" expanded="true" signature="4224:4249" placeholder="select idtra..tramo..." />
-                <marker date="1415815799991" expanded="true" signature="4453:4593" placeholder="select p.lat..parada..." />
+                <marker date="1415816574515" expanded="true" signature="2233:2344" placeholder="select p.lat..parada..." />
+                <marker date="1415816574515" expanded="true" signature="2983:3096" placeholder="select p.lat..parada..." />
+                <marker date="1415816574515" expanded="true" signature="3298:3411" placeholder="select p.lat..parada..." />
+                <marker date="1415816574515" expanded="true" signature="4220:4245" placeholder="select idtra..tramo..." />
+                <marker date="1415816574515" expanded="true" signature="4449:4589" placeholder="select p.lat..parada..." />
               </folding>
             </state>
           </provider>
@@ -111,7 +123,7 @@
       <file leaf-file-name="codigo.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/llenarbd/codigo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.508772" vertical-offset="762" max-vertical-offset="2533">
+            <state vertical-scroll-proportion="0.0" vertical-offset="762" max-vertical-offset="2533">
               <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
               <folding>
                 <marker date="1415815018543" expanded="false" signature="1883:1895" placeholder="..." />
@@ -167,6 +179,7 @@
         <option value="$PROJECT_DIR$/backend/llenarbd/crear_tramo.php" />
         <option value="$PROJECT_DIR$/backend/llenarbd/crear ruta.php" />
         <option value="$PROJECT_DIR$/backend/comollego.bo/lista de rutas.php" />
+        <option value="$PROJECT_DIR$/backend/llenarbd/recibir ruta.php" />
       </list>
     </option>
   </component>
@@ -254,24 +267,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="comollego.bo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="comollego.bo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="comollego.bo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -354,18 +349,18 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -391,6 +386,105 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/backend/llenarbd/crear_tramo.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1842" max-vertical-offset="2363">
+          <caret line="120" column="77" selection-start-line="120" selection-start-column="77" selection-end-line="120" selection-end-column="77" />
+          <folding>
+            <marker date="1415815354635" expanded="true" signature="1197:1217" placeholder="select * fro..parada..." />
+            <marker date="1415815354635" expanded="true" signature="1665:1684" placeholder="select * fro..punto..." />
+            <marker date="1415815354635" expanded="true" signature="2499:2594" placeholder="SELECT SUM( ..idtramo..." />
+            <marker date="1415815354635" expanded="true" signature="2530:2592" placeholder="SELECT idtra..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/llenarbd/estilos.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/llenarbd/recibir tramo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="986">
+          <caret line="4" column="130" selection-start-line="4" selection-start-column="130" selection-end-line="4" selection-end-column="130" />
+          <folding>
+            <marker date="1415812105507" expanded="true" signature="101:209" placeholder="INSERT INTO ..." />
+            <marker date="1415812105507" expanded="true" signature="447:598" placeholder="INSERT INTO ..." />
+            <marker date="1415812105507" expanded="true" signature="833:954" placeholder="INSERT INTO ..." />
+            <marker date="1415812105507" expanded="true" signature="1344:1493" placeholder="INSERT INTO ..." />
+            <marker date="1415812105507" expanded="true" signature="1581:1693" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/llenarbd/crear ruta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1918" max-vertical-offset="3536">
+          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+          <folding>
+            <element signature="e#7686#8419#0#PHP" expanded="true" />
+            <marker date="1415815779467" expanded="true" signature="1264:1283" placeholder="select * fro..tramo..." />
+            <marker date="1415815779467" expanded="true" signature="1820:1940" placeholder="SELECT p.lat..formado_por..." />
+            <marker date="1415815779467" expanded="true" signature="2912:3035" placeholder="SELECT p.lat..tiene..." />
+            <marker date="1415815779467" expanded="true" signature="5239:5334" placeholder="SELECT SUM( ..idlinea..." />
+            <marker date="1415815779467" expanded="true" signature="5270:5332" placeholder="SELECT idlin..." />
+            <marker date="1415815779467" expanded="true" signature="6508:6571" placeholder="SELECT nombr..." />
+            <marker date="1415815779467" expanded="true" signature="7841:7869" placeholder="SELECT idtra..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/comollego.bo/lista de rutas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5083">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1415816574515" expanded="true" signature="2233:2344" placeholder="select p.lat..parada..." />
+            <marker date="1415816574515" expanded="true" signature="2983:3096" placeholder="select p.lat..parada..." />
+            <marker date="1415816574515" expanded="true" signature="3298:3411" placeholder="select p.lat..parada..." />
+            <marker date="1415816574515" expanded="true" signature="4220:4245" placeholder="select idtra..tramo..." />
+            <marker date="1415816574515" expanded="true" signature="4449:4589" placeholder="select p.lat..parada..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/llenarbd/codigo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="762" max-vertical-offset="2533">
+          <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
+          <folding>
+            <marker date="1415815018543" expanded="false" signature="1883:1895" placeholder="..." />
+            <marker date="1415815018543" expanded="false" signature="2380:2392" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/llenarbd/codigo - tramo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3403" max-vertical-offset="4794">
+          <caret line="179" column="9" selection-start-line="179" selection-start-column="9" selection-end-line="179" selection-end-column="9" />
+          <folding>
+            <marker date="1415811278927" expanded="false" signature="7316:7328" placeholder="..." />
+            <marker date="1415811278927" expanded="false" signature="7386:7398" placeholder="..." />
+            <marker date="1415811278927" expanded="false" signature="7456:7468" placeholder="..." />
+            <marker date="1415811278927" expanded="false" signature="7539:7551" placeholder="..." />
+            <marker date="1415811278927" expanded="false" signature="8920:8932" placeholder="..." />
+            <marker date="1415811278927" expanded="false" signature="9188:9200" placeholder="..." />
+            <marker date="1415811278927" expanded="false" signature="9523:9535" placeholder="..." />
+            <marker date="1415811278927" expanded="false" signature="9928:9940" placeholder="..." />
+            <marker date="1415811278927" expanded="false" signature="10275:10287" placeholder="..." />
+            <marker date="1415811278927" expanded="false" signature="10592:10604" placeholder="..." />
+            <marker date="1415811278927" expanded="false" signature="10938:10961" placeholder="..." />
+            <marker date="1415811278927" expanded="false" signature="11041:11064" placeholder="..." />
+            <marker date="1415811278927" expanded="false" signature="11159:11171" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/llenarbd/crear_tramo.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2295">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
@@ -406,7 +500,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2626" max-vertical-offset="3281">
           <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#7686#8419#0#PHP" expanded="true" />
+            <marker date="1415815779467" expanded="true" signature="1264:1283" placeholder="select * fro..tramo..." />
+            <marker date="1415815779467" expanded="true" signature="1820:1940" placeholder="SELECT p.lat..formado_por..." />
+            <marker date="1415815779467" expanded="true" signature="2912:3035" placeholder="SELECT p.lat..tiene..." />
+            <marker date="1415815779467" expanded="true" signature="5239:5334" placeholder="SELECT SUM( ..idlinea..." />
+            <marker date="1415815779467" expanded="true" signature="5270:5332" placeholder="SELECT idlin..." />
+            <marker date="1415815779467" expanded="true" signature="6508:6571" placeholder="SELECT nombr..." />
+            <marker date="1415815779467" expanded="true" signature="7841:7869" placeholder="SELECT idtra..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -414,7 +517,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="2465">
           <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1415815018543" expanded="false" signature="1883:1895" placeholder="..." />
+            <marker date="1415815018543" expanded="false" signature="2380:2392" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -457,7 +563,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2626" max-vertical-offset="3281">
           <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#7686#8419#0#PHP" expanded="true" />
+            <marker date="1415815779467" expanded="true" signature="1264:1283" placeholder="select * fro..tramo..." />
+            <marker date="1415815779467" expanded="true" signature="1820:1940" placeholder="SELECT p.lat..formado_por..." />
+            <marker date="1415815779467" expanded="true" signature="2912:3035" placeholder="SELECT p.lat..tiene..." />
+            <marker date="1415815779467" expanded="true" signature="5239:5334" placeholder="SELECT SUM( ..idlinea..." />
+            <marker date="1415815779467" expanded="true" signature="5270:5332" placeholder="SELECT idlin..." />
+            <marker date="1415815779467" expanded="true" signature="6508:6571" placeholder="SELECT nombr..." />
+            <marker date="1415815779467" expanded="true" signature="7841:7869" placeholder="SELECT idtra..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -465,7 +580,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="2465">
           <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1415815018543" expanded="false" signature="1883:1895" placeholder="..." />
+            <marker date="1415815018543" expanded="false" signature="2380:2392" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -508,7 +626,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2932" max-vertical-offset="3587">
           <caret line="177" column="100" selection-start-line="177" selection-start-column="100" selection-end-line="177" selection-end-column="100" />
-          <folding />
+          <folding>
+            <element signature="e#7686#8419#0#PHP" expanded="true" />
+            <marker date="1415815779467" expanded="true" signature="1264:1283" placeholder="select * fro..tramo..." />
+            <marker date="1415815779467" expanded="true" signature="1820:1940" placeholder="SELECT p.lat..formado_por..." />
+            <marker date="1415815779467" expanded="true" signature="2912:3035" placeholder="SELECT p.lat..tiene..." />
+            <marker date="1415815779467" expanded="true" signature="5239:5334" placeholder="SELECT SUM( ..idlinea..." />
+            <marker date="1415815779467" expanded="true" signature="5270:5332" placeholder="SELECT idlin..." />
+            <marker date="1415815779467" expanded="true" signature="6508:6571" placeholder="SELECT nombr..." />
+            <marker date="1415815779467" expanded="true" signature="7841:7869" placeholder="SELECT idtra..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -516,7 +643,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="879" max-vertical-offset="2771">
           <caret line="143" column="42" selection-start-line="143" selection-start-column="35" selection-end-line="143" selection-end-column="42" />
-          <folding />
+          <folding>
+            <marker date="1415815018543" expanded="false" signature="1883:1895" placeholder="..." />
+            <marker date="1415815018543" expanded="false" signature="2380:2392" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -559,7 +689,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2932" max-vertical-offset="3587">
           <caret line="177" column="100" selection-start-line="177" selection-start-column="100" selection-end-line="177" selection-end-column="100" />
-          <folding />
+          <folding>
+            <element signature="e#7686#8419#0#PHP" expanded="true" />
+            <marker date="1415815779467" expanded="true" signature="1264:1283" placeholder="select * fro..tramo..." />
+            <marker date="1415815779467" expanded="true" signature="1820:1940" placeholder="SELECT p.lat..formado_por..." />
+            <marker date="1415815779467" expanded="true" signature="2912:3035" placeholder="SELECT p.lat..tiene..." />
+            <marker date="1415815779467" expanded="true" signature="5239:5334" placeholder="SELECT SUM( ..idlinea..." />
+            <marker date="1415815779467" expanded="true" signature="5270:5332" placeholder="SELECT idlin..." />
+            <marker date="1415815779467" expanded="true" signature="6508:6571" placeholder="SELECT nombr..." />
+            <marker date="1415815779467" expanded="true" signature="7841:7869" placeholder="SELECT idtra..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -567,7 +706,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="879" max-vertical-offset="2771">
           <caret line="143" column="42" selection-start-line="143" selection-start-column="35" selection-end-line="143" selection-end-column="42" />
-          <folding />
+          <folding>
+            <marker date="1415815018543" expanded="false" signature="1883:1895" placeholder="..." />
+            <marker date="1415815018543" expanded="false" signature="2380:2392" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -638,7 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -646,7 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="9.384615" vertical-offset="244" max-vertical-offset="799">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -654,7 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="1122">
           <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -669,13 +808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.0" vertical-offset="990" max-vertical-offset="2108">
           <caret line="68" column="57" selection-start-line="68" selection-start-column="57" selection-end-line="68" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/llenarbd/recibir ruta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="289">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -702,7 +834,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/llenarbd/recibir tramo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="986">
+        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="986">
           <caret line="4" column="130" selection-start-line="4" selection-start-column="130" selection-end-line="4" selection-end-column="130" />
           <folding>
             <marker date="1415812105507" expanded="true" signature="101:209" placeholder="INSERT INTO ..." />
@@ -738,7 +870,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/llenarbd/codigo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.508772" vertical-offset="762" max-vertical-offset="2533">
+        <state vertical-scroll-proportion="0.0" vertical-offset="762" max-vertical-offset="2533">
           <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
           <folding>
             <marker date="1415815018543" expanded="false" signature="1883:1895" placeholder="..." />
@@ -757,7 +889,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/llenarbd/crear_tramo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3855422" vertical-offset="1842" max-vertical-offset="2363">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1842" max-vertical-offset="2363">
           <caret line="120" column="77" selection-start-line="120" selection-start-column="77" selection-end-line="120" selection-end-column="77" />
           <folding>
             <marker date="1415815354635" expanded="true" signature="1197:1217" placeholder="select * fro..parada..." />
@@ -768,14 +900,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/comollego.bo/lista de rutas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.461538" vertical-offset="1477" max-vertical-offset="5083">
+          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <folding>
+            <marker date="1415816574515" expanded="true" signature="2233:2344" placeholder="select p.lat..parada..." />
+            <marker date="1415816574515" expanded="true" signature="2983:3096" placeholder="select p.lat..parada..." />
+            <marker date="1415816574515" expanded="true" signature="3298:3411" placeholder="select p.lat..parada..." />
+            <marker date="1415816574515" expanded="true" signature="4220:4245" placeholder="select idtra..tramo..." />
+            <marker date="1415816574515" expanded="true" signature="4449:4589" placeholder="select p.lat..parada..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/llenarbd/crear ruta.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.879518" vertical-offset="1918" max-vertical-offset="3536">
-          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+        <state vertical-scroll-proportion="-8.269231" vertical-offset="1757" max-vertical-offset="3536">
+          <caret line="116" column="27" selection-start-line="116" selection-start-column="27" selection-end-line="116" selection-end-column="27" />
           <folding>
             <element signature="e#7686#8419#0#PHP" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#p#0;n#b#0;n#b#0;n#p#1;n#fieldset#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#b#0;n#b#0;n#p#1;n#fieldset#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <marker date="1415815779467" expanded="true" signature="1264:1283" placeholder="select * fro..tramo..." />
             <marker date="1415815779467" expanded="true" signature="1820:1940" placeholder="SELECT p.lat..formado_por..." />
             <marker date="1415815779467" expanded="true" signature="2912:3035" placeholder="SELECT p.lat..tiene..." />
@@ -787,16 +931,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/comollego.bo/lista de rutas.php">
+    <entry file="file://$PROJECT_DIR$/backend/llenarbd/recibir ruta.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4018018" vertical-offset="1630" max-vertical-offset="5083">
-          <caret line="109" column="4" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.27567568" vertical-offset="0" max-vertical-offset="555">
+          <caret line="9" column="141" selection-start-line="9" selection-start-column="141" selection-end-line="9" selection-end-column="141" />
           <folding>
-            <marker date="1415815799991" expanded="true" signature="2233:2344" placeholder="select p.lat..parada..." />
-            <marker date="1415815799991" expanded="true" signature="2983:3096" placeholder="select p.lat..parada..." />
-            <marker date="1415815799991" expanded="true" signature="3298:3411" placeholder="select p.lat..parada..." />
-            <marker date="1415815799991" expanded="true" signature="4224:4249" placeholder="select idtra..tramo..." />
-            <marker date="1415815799991" expanded="true" signature="4453:4593" placeholder="select p.lat..parada..." />
+            <marker date="1415848655641" expanded="true" signature="291:478" placeholder="INSERT INTO ..." />
+            <marker date="1415848655641" expanded="true" signature="636:750" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>

@@ -107,7 +107,7 @@ if(transporte==='PUBLICO'){
 
     ///fin de creacion de funciones
     <?php
-    
+
     require_once 'archivodeconexion.php';
     $con = obtenerconexion();
     $tramo = mysqli_query($con, "select idtramo from tramo") or die("Error en la consulta sql: ". mysqli_error($con));
