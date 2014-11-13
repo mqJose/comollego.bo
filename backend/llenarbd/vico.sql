@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 12-11-2014 a las 23:20:14
+-- Tiempo de generación: 13-11-2014 a las 00:03:14
 -- Versión del servidor: 5.5.37
 -- Versión de PHP: 5.4.4-14+deb7u11
 
@@ -107,7 +107,8 @@ CREATE TABLE IF NOT EXISTS `tiene` (
   `idparada` varchar(100) NOT NULL,
   `tiempo` double NOT NULL,
   `tipo` varchar(100) NOT NULL,
-  `trazo` varchar(100) NOT NULL
+  `trazo` varchar(100) NOT NULL,
+  `orden` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
