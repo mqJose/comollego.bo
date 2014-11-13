@@ -1,4 +1,7 @@
+drop database IF EXISTS vico;
+
 CREATE DATABASE  IF NOT EXISTS `vico`;
+
 USE `vico`;
 
 -- phpMyAdmin SQL Dump
