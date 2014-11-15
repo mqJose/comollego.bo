@@ -5,22 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="estilos.css">
-    <script type="text/javascript" >
-        function inicio(){
-            setTimeout("location.href='index.php'", 50);
-        }
-        function crear_tramo(){
-            setTimeout("location.href='crear_tramo.php'", 50);
-        }
-        function crear_ruta(){
-            setTimeout("location.href='crear ruta.php'", 50);
-        }
-        function crear_sindicato(){
-            setTimeout("location.href='crear sindicato.php'", 50);
-        }
-        function ayuda(){
-            setTimeout("location.href='ayuda.php'", 50);
-        }
+    <script type="text/javascript" src="accionenlaces.js">
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry"></script>
     <script type="text/javascript" src="codigo - tramo.js"></script>

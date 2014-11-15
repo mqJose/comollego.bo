@@ -5,28 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="estilos.css">
-    <script type="text/javascript" >
-        function inicio(){
-            setTimeout("location.href='index.php'", 50);
-        }
-        function crear_tramo(){
-            setTimeout("location.href='crear_tramo.php'", 50);
-        }
-        function crear_ruta(){
-            setTimeout("location.href='crear ruta.php'", 50);
-        }
-        function crear_sindicato(){
-            setTimeout("location.href='crear sindicato.php'", 50);
-        }
-        function ayuda(){
-            setTimeout("location.href='ayuda.php'", 50);
-        }
-        function guarda_sindicato()
-        {
-            console.log("guarda sindicato");
-            alert("el sindicato fue guardado \n pero  puede revisar en la tabla de sindicatos q se encuantra \n en la lista de abajo ");
-        }
-    </script>
+    <script type="text/javascript" src="accionenlaces.js"></script>
 </head>
 <body>
     <div id="logo" style="float:top;width:100%;height:10%;"><img src="img/logo.jpg" width="100%" height="100%"></div>
@@ -88,7 +67,7 @@
                 <input type="text" style="width: 25%;float: left;"name="telefono" id="telefono" ><i>   (introdusca los numeros de referencia separados por comas ejemplo. <br>(76543210,1234567) en casod e no tener estos datos  deje el espacio vacio ) </i>
             </fieldset>
             <P>
-            <INPUT type="submit" onclick="guarda_sindicato();"value="Guardar" ><INPUT type="reset">
+            <INPUT type="submit" value="Guardar" ><INPUT type="reset">
                 <p>
                 <i>lista de sindicatos que actualmente estan en nuestra  base de datos</i>
                 <?php

@@ -5,21 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="estilos.css">
-    <script type="text/javascript" >
-        function inicio(){
-            setTimeout("location.href='index.php'", 50);
-        }
-        function crear_ruta(){
-            setTimeout("location.href='crear ruta.php'", 50);
-        }
-        function crear_sindicato(){
-            setTimeout("location.href='crear sindicato.php'", 50);
-        }
-        function ayuda(){
-            setTimeout("location.href='ayuda.php'", 50);
-        }
-
-    </script>
+    <script type="text/javascript" src="accionenlaces.js"></script>
 </head>
 <body>
     <div id="logo" style="float:top;width:100%;height:10%;"><img src="img/logo.jpg" width="100%" height="100%"></div>
