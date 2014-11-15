@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
     <title>inicio</title>
@@ -11,9 +12,10 @@
     <script type="text/javascript" src="codigo.js"></script>
 </head>
 <body>
-<div id="logo" style="float:top;width:100%;height:10%;"><img src="img/logo.jpg" width="10%" height="100%"><img src="img/logo.jpg" width="90%" height="100%"></div>
-<div id="panel" style="float:left;width:25%;height:90%;">
 
+<div id="logo" style="float:top;width:100%;height:10%;"><img src="img/logo.jpg" width="10%" height="100%"><img src="img/logo.jpg" width="90%" height="100%"></div>
+
+<div id="panel" style="float:left;width:25%;height:90%;">
     <form action="lista de rutas.php" method="get">
         <fieldset>
             <legend>Como Llego</legend>
@@ -30,7 +32,7 @@
                 <label  style="width: 20%;float: left;">Final :</label>
                 <input type="text" style="width: 77%;float: left;"id="final" onClick="mm(1)" required>
             <P>
-            <!--Este DIV debe ser ocutlo si o si -->
+                <!--Este DIV debe ser ocutlo si o si -->
             <div id="oculto" style='display:none'></div>
             <INPUT type="submit" onclick="" value="Buscar Ruta"style="width: 100%;float: left;">
             <p>
