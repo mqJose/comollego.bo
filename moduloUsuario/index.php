@@ -18,8 +18,10 @@
 <div id="panel" style="float:left;width:25%;height:90%;">
     <form action="lista de rutas.php" method="get">
         <fieldset>
+
             <legend>Como Llego</legend>
             <label  style="width: 20%;float: left;">Tipo:</label>
+
             <select id = "tipo" name = "tipo_transporte" style = "width: 77%;float: left;" onclick = "actualiza();">
                 <option value="WALKING">A pie</option>
                 <option value="PUBLICO">Trasporte publico</option>

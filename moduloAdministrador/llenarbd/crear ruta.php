@@ -67,36 +67,14 @@
     </script>
 </head>
 <body>
-<div id="logo" style="float:top;width:100%;height:10%;"><img src="img/logo.jpg" width="100%" height="100%"></div>
-<div id="panel" style="float:left;width:10%;height:90%;">
-    <table>
-        <tr>
-            <td></td>
-            <td><strong><input type="button" onclick="inicio()" value="INICIO" style='width:140px; height:25px'></strong></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><strong><input type="button" onclick="crear_tramo()" value="CREAR TRAMO" style='width:140px; height:25px'></strong></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><strong><input type="button" onclick="crear_ruta()" value="CREAR RUTA" style='width:140px; height:25px'></strong></td>
-        </tr>
 
-        <tr>
-            <td ></td>
-            <td><strong><input type="button" onclick="crear_sindicato()" value="CREAR SINDICATO" style='width:140px; height:25px'></strong></td>
-        </tr>
-
-        <tr>
-            <td ></td>
-            <td><strong><input type="button" onclick="ayuda()" value="AYUDA" style='width:140px; height:25px'></strong></td>
-        </tr>
-    </table>
-
-</div>
+<?php
+require 'barrasuperior.php';
+require 'panelizquierdo.php';
+?>
 
 <div id="mapa" style="float:left;width:60%;height:90%;"></div>
+
 <div id="panel" style="float:left;width:30%;height:90%;">
     <form action="recibir ruta.php" method="post">
         <fieldset>
@@ -179,6 +157,7 @@
         </fieldset>
         <P>
             <INPUT type="submit" value="Enviar" >
+        </P>
     </form>
 </div>
 

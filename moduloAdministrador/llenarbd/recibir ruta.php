@@ -1,4 +1,4 @@
-<?php
+ <?php
 //$conexion = mysql_connect("localhost", "root", "123456") or die("Problemas con la conexion");
 //mysql_select_db("vico", $conexion) or die("Problemas en la seleccion de la base de datos");
 require_once 'archivodeconexion.php';

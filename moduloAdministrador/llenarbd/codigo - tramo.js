@@ -122,6 +122,7 @@ function mueve_marke(x,y){
         v_pol[x]=[];
         v_pol[x].push( vector_markes[x].getPosition());
         v_pol[x].push( vector_markes[y].getPosition());
+
         if(y>0)tiempo[x+1]=google.maps.geometry.spherical.computeDistanceBetween(vector_markes[x].getPosition(),vector_markes[y].getPosition())*0.25;
         if (rutaactual)
             rutaactual.setMap(null);
