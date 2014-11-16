@@ -216,14 +216,14 @@ function pasar_paradas_a_div()
         cc=cc+"<option value='"+vector_markes[i].title+"'selected='true' >IDPARADA</option>";
     }
     cc=cc+"</select>";
-    cc+="<select multiple  name ='tiempo[]' style='display:none'>";
+    cc+="<select name ='"+tiempo[]+"'>";
     for(var i=0;i<vector_markes.length;i++){
         tt=tt+tiempo[i];
         cc=cc+"<option value='"+(tt/60)+"'selected='true' >TIEMPO</option>";
     }
     cc=cc+"</select>";
     /**********************************PASAMOS TRAZO**************************************/
-    cc+="<select multiple  name ='trazo[]' style='display:none'>";
+    cc+="<select name ='"+trazo[]+"'>";  //Editado
     for(var i=0;i<vector_markes.length;i++){
         cc=cc+"<option value='"+trazo[i]+"'selected='true' >trazo</option>";
     }
@@ -244,9 +244,9 @@ function pasar_paradas_a_div()
         if(vector_markes[i].draggable)cc=cc+"<option value='"+vector_markes[i].getPosition().lng()+"'selected='true' >longitud</option>";
     }
     cc=cc+"</select>";
-    cc+="<select multiple name='cod_paradas_nuevas[]'>";
+    cc+="<select name='cod_paradas_nuevas[]' class='form-control'>";
     for(var i=0;i<vector_markes.length;i++){
-        if(vector_markes[i].draggable)cc=cc+"<option value='"+vector_markes[i].title+"'selected='true' >codparadas nuevas</option>";
+        if(vector_markes[i].draggable)cc=cc+"<option value='"+vector_markes[i].title+"'selected='true' >"+vector_markes[i].title+"</option>";
     }
     cc=cc+"</select>";
     /**************************terminamos de adicionar las latitudes y longitudes***************/

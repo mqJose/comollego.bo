@@ -345,21 +345,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i> Lineas<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#"> Crear Lineas</a>
-                                </li>
-                                <li>
-                                    <a href="#"> Eliminar Lineas</a>
-                                </li>
-                                <li>
-                                    <a href="#"> Modificar Lineas</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i> Ruta<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Linea<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="crear-ruta.php"> Crear Ruta</a>
