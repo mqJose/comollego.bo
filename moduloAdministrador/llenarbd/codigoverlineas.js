@@ -135,6 +135,8 @@ function dibujarTramo(poligono) {
     });
     offset = 0;
     start();
+    if (poligono && poligono.length > 0)
+        map.panTo(poligono[0]);
     //tramoactual.setMap(map);
 }
 function start() {

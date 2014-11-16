@@ -31,7 +31,8 @@ function placeMarker(e,pos, map,titulo) {
             content: "   Inicio   "
         });
 
-        popup.open(map,marker_i);
+        //popup.open(map,marker_i);
+
         map.panTo(pos);//pociciona el  mapa sobre el marker
     }
     else{
