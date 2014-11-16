@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html>
 <head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Cómollego.bo</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="icon" type="image/png" href="img/maps.png"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <style>
+        html, body, section, #map-canvas {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+        body{
+            padding-top: 57px;
+        }
+    </style>
 
-    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script type="text/javascript" src="js/maps.js"></script>
 </head>
 <body>
     <header role="navigation" class="navbar navbar-fixed-top bs-docs-nav">       
@@ -119,9 +128,7 @@
     </aside>
     <section class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
 <!--Ingresar en este contenedor el mapa de la aplicacion-->
-        <div class="contenido-map">
-            <img src="img/img-map.png" alt="imagen de prueba de mapa" class="adaptar">
-        </div>
+			<div id="map-canvas"></div>
 <!--end Mapa-->
     </section>
     <footer class="pie ">
