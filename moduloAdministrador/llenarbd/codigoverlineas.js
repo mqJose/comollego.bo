@@ -109,7 +109,36 @@ function dibujarLinea(poligono){
 }
 
 
+function dibujarTramo(poligono) {
+    clearInterval(timer);
 
+    if (tramoactual) // Si existe el poligono actual
+        tramoactual.setMap(null);
+
+    tramoactual = new google.maps.Polyline({
+        path: poligono,
+        strokeOpacity: 0.0,
+
+        strokeColor: 'black',
+
+        icons: [{
+            icon: {
+                path: 'M -1,1 0,0 1,1',
+                strokeOpacity: 1,
+                strokeWeight: 1.5,
+                scale: 6
+            },
+            repeat: '10px'
+        }],
+
+        map: map
+    });
+    offset = 0;
+    start();
+    if (poligono && poligono.length > 0)
+        map.panTo(poligono[0]);
+    //tramoactual.setMap(map);
+}
 function start() {
     timer = setInterval(function() {
         animacion();

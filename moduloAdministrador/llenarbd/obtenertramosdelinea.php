@@ -18,4 +18,5 @@ while ($fila = mysqli_fetch_array($registros)) {
 }
 if ($ans)//Si no esta vacio
     echo json_encode($ans);
+
 ?>

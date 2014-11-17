@@ -154,8 +154,8 @@ function sinRepetidos($array) {
 
 /**************************************  FUNCIONALIDAD PRINCIPAL  *******************************************/
 function obtenerOpcionesDeRuta($latitudini, $longitudini, $latitudfin, $longitudfin) {
-    $paradasini = buscarParadasCercanas($latitudini, $longitudini, 0.4);
-    $paradasfin = buscarParadasCercanas($latitudfin, $longitudfin, 0.4);
+    $paradasini = buscarParadasCercanas($latitudini, $longitudini, 0.2);
+    $paradasfin = buscarParadasCercanas($latitudfin, $longitudfin, 0.2);
     $ans = array();
     $indiceans = 0;
     $unsolotramo = array();

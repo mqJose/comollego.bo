@@ -135,6 +135,7 @@ function calcular_ruta(){
 var alternativas = [];
 var referenciatramo = [];
 var tramo = [];
+var lineaspasanportramo = [];
 function porTransportePublico(respuesta) {
 
     alternativas = eval(respuesta);
@@ -164,6 +165,13 @@ function actualizarAlternativa() {
     var alternativaseleccionada = document.getElementById("selectalternativas").selectedIndex;
     if (alternativaseleccionada < 0 || alternativaseleccionada >= alternativas.length) alternativaseleccionada = 0;
     var tienetramos = alternativas[alternativaseleccionada];
+
+    if (tramoactual)
+        tramoactual.setMap(null);
+    if (timer)
+        clearInterval(timer);
+
+
     poligono = [];
     for (var i = 0; i < tienetramos.length; i++) {
         var tt = tienetramos[i];
@@ -181,6 +189,8 @@ function actualizarAlternativa() {
                 success: function (resp) {
                     tramo[tt] = resp['puntos'];
                     referenciatramo[tt] = resp['referencia'];
+                    lineaspasanportramo[tt] = resp['lineas'];
+                    //console.log("lineas que pasan por el tramo "+ tt + " son : " + lineaspasanportramo[tt].toString());
                 },
                 error: function(){
                     alert("ERROR al obtener informacion de tramo");
@@ -197,7 +207,7 @@ function actualizarAlternativa() {
 
     var detalles = "<select id = 'selecttramo' size="+tienetramos.length+" style='width:100%' onchange = 'dibujarTramo();'>";
     for (var i = 0; i < tienetramos.length; i++) {
-        detalles += "<option value = " + tienetramos[i] + ">" +(i+1)+" .- "+ referenciatramo[tienetramos[i]] + "</option>";
+        detalles += "<option  value = " + tienetramos[i] + ">" +(i+1)+" .- "+ referenciatramo[tienetramos[i]] +"<br> (Lineas:" + lineaspasanportramo[tienetramos[i]] + ")</option>";
     }
 
 
