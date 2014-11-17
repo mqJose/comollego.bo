@@ -6,7 +6,7 @@ var marker_final;
 var click;
 var seleccionado;
 var strictBounds;
-var tipo_transporte = "WALKING";
+var tipo_transporte = "PUBLICO";
 function initialize() {
     console.log("no   sueño");
     directionsDisplay = new google.maps.DirectionsRenderer();

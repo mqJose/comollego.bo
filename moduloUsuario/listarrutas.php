@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
 
+    <script type="text/javascript" src="js/jquery.js"></script>
+
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&libraries=geometry"></script>
     <script type="text/javascript">
         var lat_i;
@@ -35,9 +37,7 @@
         if(!(transporte === 'WALKING') &&  distancia_de_dos_LatLngs(new google.maps.LatLng(lat_i, lng_i),new google.maps.LatLng(lat_f, lng_f)) < 200){
             if(confirm("La distancia a su destino es menor a 200 mts. \n ¿Desea calcular los pasos para llegar a pie?")) {
                 transporte = 'WALKING';
-                <?php
-                    $tipo = 'WALKING';
-                ?>
+
             }
         }
         function distancia_de_dos_LatLngs(a,b){
@@ -103,7 +103,9 @@
                         <label  style="width: 77%;float: left;"><?php  echo $dir[1]; ?></label>
                         <br>
                         <label  style="width: 20%;float: left;">Tipo:</label>
-                        <label  style="width: 77%;float: left;"><?php  if($tipo=='WALKING')echo "A PIE"; if($tipo=='PUBLICO')echo "TRANSPORTE PUBLICO";if($tipo=='DRIVING')echo "MOVILIDAD PRIVADA"; ?></label>
+                        <label  style="width: 77%;float: left;"><?php  if($tipo=='WALKING')echo "A PIE";
+                            if($tipo=='PUBLICO')echo "TRANSPORTE PUBLICO";
+                            if($tipo=='DRIVING')echo "MOVILIDAD PRIVADA"; ?></label>
                         <br>
                     </div>
                 </div>

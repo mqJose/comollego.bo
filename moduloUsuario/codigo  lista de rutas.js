@@ -71,9 +71,7 @@ function placeMarker_prueva(e,pos, map,titulo) {
     e.setIcon('http://www.rubipamplona.com/img/marker.png');
     map.panTo(pos);//pociciona el  mapa sobre el marker   
 }
-function marcamos_paradas_sercanas(){
 
-}
 function calcular_ruta(){
     if(transporte==='PUBLICO'){
         /*
@@ -87,6 +85,19 @@ function calcular_ruta(){
          AQUI ES DONDE DEBO HACER LA MAGIA DEL AJAX
 
          */
+        var parametros = {
+            "latitudini" : lat_i,
+            "longitudini": lng_i,
+            "latitudfin" : lat_f,
+            "longitudfin": lng_f
+        };
+        $.ajax({
+            data: parametros,
+            url: 'procesarconsulta.php',
+            type: 'post',
+            async: false,//Super IMPORTANTE!!! SI NO, SE PUSHEA MAL
+            success: porTransportePublico
+        });
     }
     else{
         var travel;
@@ -115,6 +126,7 @@ function calcular_ruta(){
 
                 c=c+"<select  size='"+route.legs[i].steps.length+"'  style='width: 100%;float: left;' onChange='seleccionado(this)''>";
 
+
                 for(var pp=0;pp<route.legs[i].steps.length;pp++){
                     pasos_i.push(route.legs[i].steps[pp]);
                     c=c+"<option value='"+pp+"' >"+(pp+1)+"  .-   "+route.legs[i].steps[pp].instructions+"</option>";
@@ -131,6 +143,87 @@ function calcular_ruta(){
         });
     }
 }
+var alternativas = [];
+var referenciatramo = [];
+var tramo = [];
+function porTransportePublico(respuesta) {
+
+    alternativas = eval(respuesta);
+    tramo = [];
+    referenciatramo = [];
+
+    /*llenamos el contenido en pantalla*/
+    var cad = "";
+
+    if (alternativas.length > 0) {
+        cad = "<select id='selectalternativas' size=" + alternativas.length + " style='width: 100%' onchange='actualizarAlternativa()'>";
+        for (var i = 0; i < alternativas.length; i++)
+            cad += "<option value = " + i + ">" + alternativas[i].toString() + "</option>";
+        cad += "</select>";
+        document.getElementById("ruta").innerHTML = cad;
+        actualizarAlternativa();
+    } else {
+
+        cad = "No se encontraron resultados tendra que usar un TAXI";
+        document.getElementById("ruta").innerHTML = cad;
+    }
+
+
+}
+
+function actualizarAlternativa() {
+    var alternativaseleccionada = document.getElementById("selectalternativas").selectedIndex;
+    if (alternativaseleccionada < 0 || alternativaseleccionada >= alternativas.length) alternativaseleccionada = 0;
+    var tienetramos = alternativas[alternativaseleccionada];
+    poligono = [];
+    for (var i = 0; i < tienetramos.length; i++) {
+        var tt = tienetramos[i];
+        if (!tramo[tt]) {
+            console.log("Se va a pedir tramo: " + tt);
+            var parametros = {
+                "idtramo" : tt
+            };
+            $.ajax({
+                data: parametros,
+                url: 'obtenerinformaciondetramo.php',
+                dataType: 'json',
+                type: 'post',
+                async: false,//Super IMPORTANTE!!! SI NO salen errores incontrolables
+                success: function (resp) {
+                    tramo[tt] = resp['puntos'];
+                    referenciatramo[tt] = resp['referencia'];
+                },
+                error: function(){
+                    alert("ERROR al obtener informacion de tramo");
+                }
+            });
+        }
+
+        if (tramo[tt]) {
+            var puntos = tramo[tt];
+            for (var j = 0; j < puntos.length; j++) {
+                poligono.push(new google.maps.LatLng(puntos[j][0], puntos[j][1]));
+            }
+        }
+
+    }
+    dibujarLinea(poligono);
+}
+
+var lineaactual;
+
+function dibujarLinea(poligono){
+    if (lineaactual)
+        lineaactual.setMap(null);
+    lineaactual = new google.maps.Polyline({
+        path: poligono,
+        strokeColor: 'blue',
+        strokeOpacity: 0.6,
+        strokeWeight: 7.0,
+        map: map
+    });
+}
+
 function apie(){
 
     pasos = new google.maps.Polyline({

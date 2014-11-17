@@ -154,8 +154,8 @@ function sinRepetidos($array) {
 
 /**************************************  FUNCIONALIDAD PRINCIPAL  *******************************************/
 function obtenerOpcionesDeRuta($latitudini, $longitudini, $latitudfin, $longitudfin) {
-    $paradasini = buscarParadasCercanas($latitudini, $longitudini, 0.4);
-    $paradasfin = buscarParadasCercanas($latitudfin, $longitudfin, 0.4);
+    $paradasini = buscarParadasCercanas($latitudini, $longitudini, 0.2);
+    $paradasfin = buscarParadasCercanas($latitudfin, $longitudfin, 0.2);
     $ans = array();
     $indiceans = 0;
     $unsolotramo = array();
@@ -225,8 +225,8 @@ function solve($ultimotramo, $tramosrestantes, $vector, &$tramosFIN, &$sol) {
     }
 
 }
-/*
-$repuesta = obtenerOpcionesDeRuta(-16.49107143639339, -68.12361996620893, -16.490999423918716, -68.12272947281599);
+
+/*$repuesta = obtenerOpcionesDeRuta(-16.52380997396528, -68.15124448345159, -16.504344054815466, -68.13121436158326);
 //$repuesta = obtenerOpcionesDeRuta(-16.497389944487566,-68.13421569764614, -16.50282968529163, -68.12220375984907);
 //$repuesta = obtenerOpcionesDeRuta(-16.497389944487566,-68.13421569764614, -16.49945556274807, -68.12888782471418);
 for ($i = 0, $tam = count($repuesta); $i < $tam; $i++) {
