@@ -7,5 +7,6 @@
     $latfin = $_REQUEST['latitudfin'];
     $lngfin = $_REQUEST['longitudfin'];
     $respuesta = obtenerOpcionesDeRuta($latini, $lngini, $latfin, $lngfin);
+
     echo json_encode($respuesta);
 ?>

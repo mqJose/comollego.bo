@@ -74,17 +74,6 @@ function placeMarker_prueva(e,pos, map,titulo) {
 
 function calcular_ruta(){
     if(transporte==='PUBLICO'){
-        /*
-         var c = "<select  size='" + v.length + "'  style='width: 100%;float: left;' onChange='tramos_seleccionados(this)''>";
-         for(var pp = 0; pp < v.length; pp++){
-         c = c + "<option value='" + pp + "' >" + (pp+1) + "  .-   " + v[pp] + "---------"+(t[pp])+"    minutos</option>";
-         }
-         c = c + "</select>";
-         document.getElementById("ruta").innerHTML = c;
-
-         AQUI ES DONDE DEBO HACER LA MAGIA DEL AJAX
-
-         */
         var parametros = {
             "latitudini" : lat_i,
             "longitudini": lng_i,
@@ -138,7 +127,7 @@ function calcular_ruta(){
                 polilyne.push(response.routes[0].overview_path[j]);
             }
             //en esta parte tenemos que  ver  que a  pie o a en auto
-            apie();
+            dibujarAnimacion();
             //document.getElementById("div1").innerHTML="<INPUT type='button' onclick='selecciona_paso(0)' value='PASOS de  INICIO hasta FINAL'style='width: 100%;float: left;'>";
         });
     }
@@ -156,22 +145,22 @@ function porTransportePublico(respuesta) {
     var cad = "";
 
     if (alternativas.length > 0) {
-        cad = "<select id='selectalternativas' size=" + alternativas.length + " style='width: 100%' onchange='actualizarAlternativa()'>";
+        cad = "Se encontraron " + alternativas.length + " posibles rutas:";
+        cad += "<select id='selectalternativas' style='width: 100%' onchange='actualizarAlternativa()'>";
         for (var i = 0; i < alternativas.length; i++)
-            cad += "<option value = " + i + ">" + alternativas[i].toString() + "</option>";
+            cad += "<option value = " + i + "> Opcion " + (i + 1) + "</option>";
         cad += "</select>";
         document.getElementById("ruta").innerHTML = cad;
         actualizarAlternativa();
     } else {
-
         cad = "No se encontraron resultados tendra que usar un TAXI";
         document.getElementById("ruta").innerHTML = cad;
     }
 
-
 }
 
 function actualizarAlternativa() {
+    if (!alternativas.length)return;
     var alternativaseleccionada = document.getElementById("selectalternativas").selectedIndex;
     if (alternativaseleccionada < 0 || alternativaseleccionada >= alternativas.length) alternativaseleccionada = 0;
     var tienetramos = alternativas[alternativaseleccionada];
@@ -188,7 +177,7 @@ function actualizarAlternativa() {
                 url: 'obtenerinformaciondetramo.php',
                 dataType: 'json',
                 type: 'post',
-                async: false,//Super IMPORTANTE!!! SI NO salen errores incontrolables
+                async: false,//Desactivar asincrono, Super IMPORTANTE!!! SI NO salen errores incontrolables
                 success: function (resp) {
                     tramo[tt] = resp['puntos'];
                     referenciatramo[tt] = resp['referencia'];
@@ -198,21 +187,41 @@ function actualizarAlternativa() {
                 }
             });
         }
-
         if (tramo[tt]) {
             var puntos = tramo[tt];
             for (var j = 0; j < puntos.length; j++) {
                 poligono.push(new google.maps.LatLng(puntos[j][0], puntos[j][1]));
             }
         }
-
     }
+
+    var detalles = "<select id = 'selecttramo' size="+tienetramos.length+" style='width:100%' onchange = 'dibujarTramo();'>";
+    for (var i = 0; i < tienetramos.length; i++) {
+        detalles += "<option value = " + tienetramos[i] + ">" +(i+1)+" .- "+ referenciatramo[tienetramos[i]] + "</option>";
+    }
+
+
+    detalles += "</select>";
+    document.getElementById("detallesdelaruta").innerHTML = detalles;
+
     dibujarLinea(poligono);
 }
 
 var lineaactual;
+var tramoactual;
+function dibujarTramo() {
+    var selecttramo = document.getElementById("selecttramo");
+    var tramoseleccionado = selecttramo[selecttramo.selectedIndex].value;
+    var puntos = tramo[tramoseleccionado];
+    poligono = [];
+    for (var i = 0; i < puntos.length; i++) {
+        poligono.push(new google.maps.LatLng(puntos[i][0], puntos[i][1]));
+    }
 
-function dibujarLinea(poligono){
+    trazarTramo(poligono);
+}
+
+function dibujarLinea(poligono) {
     if (lineaactual)
         lineaactual.setMap(null);
     lineaactual = new google.maps.Polyline({
@@ -224,7 +233,57 @@ function dibujarLinea(poligono){
     });
 }
 
-function apie(){
+
+function trazarTramo(poligono) {
+
+        clearInterval(timer);
+
+    if (tramoactual) // Si existe el poligono actual
+        tramoactual.setMap(null);
+
+    tramoactual = new google.maps.Polyline({
+        path: poligono,
+        strokeOpacity: 0.0,
+
+        strokeColor: 'black',
+
+        icons: [{
+            icon: {
+                path: 'M -1,1 0,0 1,1',
+                strokeOpacity: 1,
+                strokeWeight: 1.5,
+                scale: 6
+            },
+            repeat: '10px'
+        }],
+
+        map: map
+    });
+    offset = 0;
+    start2();
+    if (poligono && poligono.length > 0)
+        map.panTo(poligono[0]);
+    //tramoactual.setMap(map);
+}
+var timer;
+function start2() {
+    timer = setInterval(function() {
+        animacion2();
+    }, 50);
+}
+function animacion2() {
+    if(offset== 9)
+        offset= 0;
+    else
+        offset++;
+    var icons = tramoactual.get('icons');
+    icons[0].offset = offset + 'px';
+    tramoactual.set('icons', icons);
+}
+
+
+
+function dibujarAnimacion(){
 
     pasos = new google.maps.Polyline({
         path: polilyne,

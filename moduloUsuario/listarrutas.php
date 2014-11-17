@@ -117,6 +117,13 @@
                         <div id="ruta">Cargando...</div>
                     </div>
                 </div>
+
+                <div class="panel panel-info">
+                    <div >
+                        <div id="detallesdelaruta">Seleccione una ruta ...</div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
