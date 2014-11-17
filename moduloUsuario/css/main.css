@@ -1,0 +1,134 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+body{
+    background-color: #D3DF6F;
+    padding-top: 57px;
+}
+
+.encabezado{
+    background-image: url(../img/cuero.jpg);
+    background-color: #2C699F;
+    padding: 0;
+    border-radius: 0px;
+}
+.container, .row {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.space{
+    padding: 3px 0 0 20px;
+    /*
+    width: 137px;
+    height: 70px;
+    text-align: left;
+    position: absolute;
+    float: left;
+    */
+}
+.contenedor-lateral{
+    background-color: #E8E8E8;/*#f2f2f2;*/
+    padding: 0.5em;
+    text-align: center;
+    border-radius: 0.2em;
+}
+.etiqueta{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: -1px;
+}
+.adaptar{
+    width: 100%;
+    height: 100%;
+}
+.contend{
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+.infor{
+    text-align: left; 
+}
+.pie{
+    background-image: url(../img/cuero.jpg);
+    width: 100%;
+    height: 40px;
+    padding: 0.5em;
+    text-align: center;
+    color: #F2F2F2;
+    position: static;
+    float: left;
+}
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+

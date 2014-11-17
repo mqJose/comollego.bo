@@ -37,15 +37,11 @@ require 'panelizquierdo.php';
                 echo '</select>';
                 mysqli_close($conexion);
             ?>
-            <br>
-            <br>
-            Recorrido:
+            <p>Recorrido:</p>
             <div id="listadetramos">
                 <select id='selecttramos' size=4 style='width: 100%' >
                 </select>
-
             </div>
-
         </fieldset>
     </form>
 </div>

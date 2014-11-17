@@ -76,12 +76,17 @@ function marcamos_paradas_sercanas(){
 }
 function calcular_ruta(){
     if(transporte==='PUBLICO'){
-        var c = "<select  size='" + v.length + "'  style='width: 100%;float: left;' onChange='tramos_seleccionados(this)''>";
-        for(var pp = 0; pp < v.length; pp++){
-            c = c + "<option value='" + pp + "' >" + (pp+1) + "  .-   " + v[pp] + "---------"+(t[pp])+"    minutos</option>";
-        }
-        c = c + "</select>";
-        document.getElementById("ruta").innerHTML = c;
+        /*
+         var c = "<select  size='" + v.length + "'  style='width: 100%;float: left;' onChange='tramos_seleccionados(this)''>";
+         for(var pp = 0; pp < v.length; pp++){
+         c = c + "<option value='" + pp + "' >" + (pp+1) + "  .-   " + v[pp] + "---------"+(t[pp])+"    minutos</option>";
+         }
+         c = c + "</select>";
+         document.getElementById("ruta").innerHTML = c;
+
+         AQUI ES DONDE DEBO HACER LA MAGIA DEL AJAX
+
+         */
     }
     else{
         var travel;
@@ -91,20 +96,25 @@ function calcular_ruta(){
         var end = new google.maps.LatLng(lat_f, lng_f);
         var request = {
             origin: start,
-            destination: end
-            ,travelMode: travel
+            destination: end,
+            travelMode: travel
         };
         directionsService.route(request, function(response, status) {
+            var route;
             if (status == google.maps.DirectionsStatus.OK)
             //directionsDisplay.setDirections(response);//  en esta parte  colocamos a  el panel la linea  y los pasos
-                var route = response.routes[0];
-            var c="";
+                route = response.routes[0];
+            var c = "";
             for (var i = 0; i < route.legs.length; i++) {
-                if(transporte==='WALKING')c+="<i>Las rutas a pie están en versión beta. Ten cuidado. – En esta<br>ruta puede que no haya aceras o pasos para peatones.</i><br>";
-                c+="<br>***********************************************************************************<br>";
-                c=c+"********"+route.legs[i].distance.text+"- aproximadamente "+route.legs[i].duration.text+"********";
-                c+="<br>********************PASOS*********************************************<br>";
+                if (transporte === 'WALKING')
+                    c += "<i>Las rutas a pie están en versión beta. Ten cuidado. – En esta<br>ruta puede que no haya aceras o pasos para peatones.</i><br>";
+
+                c = c + "<label>Distancia(Aprox.):</label>" + route.legs[i].distance.text;
+                c += "<br>";
+                c = c + "<label>Tiempo(Aprox.):</label>" + route.legs[i].duration.text;
+
                 c=c+"<select  size='"+route.legs[i].steps.length+"'  style='width: 100%;float: left;' onChange='seleccionado(this)''>";
+
                 for(var pp=0;pp<route.legs[i].steps.length;pp++){
                     pasos_i.push(route.legs[i].steps[pp]);
                     c=c+"<option value='"+pp+"' >"+(pp+1)+"  .-   "+route.legs[i].steps[pp].instructions+"</option>";
@@ -114,7 +124,6 @@ function calcular_ruta(){
             }
             for(var j = 0; j < response.routes[0].overview_path.length; j++){
                 polilyne.push(response.routes[0].overview_path[j]);
-
             }
             //en esta parte tenemos que  ver  que a  pie o a en auto
             apie();
@@ -193,22 +202,22 @@ function seleccionado(ele){
     console.log(pasos_i[valores]);
 
     console.log(valores);
+
     if(marker_saltarin)
         marker_saltarin.setMap(null);
+
     marker_saltarin  = new google.maps.Marker({
         position: pasos_i[valores].start_location,
         map: map,
-        title:"prueva",
-        animation:google.maps.Animation.BOUNCE
+        title:"PASO INTERMEDIO",
+        animation: google.maps.Animation.BOUNCE
     });
     var popup = new google.maps.InfoWindow({
-        content: pasos_i[valores].instructions
+        content: pasos_i[valores].instructions,
     });
 
-    popup.open(map,marker_saltarin);
+    popup.open(map, marker_saltarin);
     map.panTo(pasos_i[valores].start_location);
 }
-function crear_marke_saltarin(){
 
-}
 google.maps.event.addDomListener(window, 'load', initialize);

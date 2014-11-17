@@ -194,7 +194,7 @@
         </fieldset>
     </form>
 </div>
-<div id="mapa" style="float:left;width:75%;height:90%;"> </div>
+<div id="mapa" style="height: 35em"> </div>
 </body>
 </html>
 <!--  -->

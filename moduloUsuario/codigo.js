@@ -6,6 +6,7 @@ var marker_final;
 var click;
 var seleccionado;
 var strictBounds;
+var tipo_transporte = "WALKING";
 function initialize() {
     console.log("no   sueño");
     directionsDisplay = new google.maps.DirectionsRenderer();
@@ -62,6 +63,7 @@ function initialize() {
         console.log(x+"               "+y);
         map.setCenter(new google.maps.LatLng(y, x));
     });
+
 }
 function actualiza(){
     console.log("Actualiza");
@@ -140,8 +142,10 @@ function placeMarker(pos, map) {
 
 }
 function actualiza_div_oculto(){
-    console.log("actualizamos div  ");
-    var cc="</select>";
+    console.log("actualizamos div  asdf");
+    console.log("tipo_transporte" + tipo_transporte);
+    var cc = "</select>";
+    cc+="<input type='text' name='tipo_transporte' value='" + tipo_transporte + "'>";
     if(marker_inicio){
         cc+="<select multiple  name ='inicio[]'>";
         cc+="<option value='"+marker_inicio.getPosition().lat()+"'selected='true' >latitud inicio</option>";
