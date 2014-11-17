@@ -395,36 +395,34 @@
                 <div class="row">                    
                     <div class="col-lg-4">
                     <!-- Content  de Funcionalidad-->
-                    <div class="container-fluid">
-                        <div class="row" id="panel">
-                            <form action="recibir-tramo.php" method="post" role="form">
-                                <div class="form-group">
-                                    <label >Tramo #: <?php echo $nro; ?></label>
-                                    <input class="form-control" id="referencia" type="text" placeholder="Referencia">
-                                    <p class="help-block">Ejemplo: Origen - Destino</p>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only">id Tramo</label>
-                                    <input class="form-control" id="id_tramo" name="id_tramo" type="hidden" value="<?php echo $nro; ?>">
-                                </div>
-                                <button type="submit" onclick="guarda_tramo();"value="Guardar Tramo" class="btn btn-primary">Guardar Tramo</button>
-                                <div ></div>
-                            </form>
-                        </div>
-                        <br>
-                        <div class=" row panel panel-info">
-                            <div class="panel-heading">Panel de Paradas</div>
-                            <div class="panel-body" id="panel_de_paradas">    
+                        <div class="container-fluid">
+                            <div class="row" id="panel">
+                                <form action="recibir-tramo.php" method="post" role="form">
+                                    <div class="form-group">
+                                        <label >Tramo #: <?php echo $nro; ?></label>
+                                        <input class="form-control" id="referencia" type="text" placeholder="Referencia">
+                                        <p class="help-block">Ejemplo: Origen - Destino</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only">id Tramo</label>
+                                        <input class="form-control" id="id_tramo" name="id_tramo" type="hidden" value="<?php echo $nro; ?>">
+                                    </div>
+                                    <button type="submit" onclick="guarda_tramo();"value="Guardar Tramo" class="btn btn-primary">Guardar Tramo</button>
+                                    <div ></div>
+                                </form>
                             </div>
+                            <br>
+                            <div class=" row panel panel-info">
+                                <div class="panel-heading">Panel de Paradas</div>
+                                <div class="panel-body" id="panel_de_paradas">    
+                                </div>
+                            </div>
+                        
+                        <!-- / Content  de Funcionalidad-->   
                         </div>
-                    
-                    <!-- / Content  de Funcionalidad-->   
                     </div>
-                    </div>
-                    <div id="mapa" class="col-lg-8">  
-                    </div>
+                    <div id="mapa" class="col-lg-8"></div>
                     <!-- /.col-lg-12 -->
-
                 </div>
                 <!-- /.row -->
             </div>

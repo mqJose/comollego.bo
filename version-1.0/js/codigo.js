@@ -31,7 +31,8 @@ function placeMarker(e,pos, map,titulo) {
             content: "   Inicio   "
         });
 
-        popup.open(map,marker_i);
+        //popup.open(map,marker_i);
+
         map.panTo(pos);//pociciona el  mapa sobre el marker
     }
     else{
@@ -62,18 +63,18 @@ function pasar_tramo_a_div()
         rutatotal.setMap(map);
         //en la variable c creamos la tabla q se mostrara 
         //  en la variable cc nos ayudara  a pasar los datos  la  base de datos
-        var c="<i>lista de tramos que tendra la nueva ruta</i><b><table border =1px style='width: 100%;'>";
-        c=c+"<tr><td><i>nro </i></td><td><i>tramo</i></td></tr>";
+        var c="<p>Lista de Tramos</p><table class='table table-striped table-hover'>";
+        c=c+"<thead><tr><th><i>nro </i></th><th><i>tramo</i></th></tr></thead><tbody>";
         for(var i=0;i<cod_tramos.length;i++){
-            c=c+"<tr><td>"+(i+1)+"</td><td> Tramo "+cod_tramos[i]+"</td></tr>";
+            c=c+"<tr><td>"+(i+1)+"</td><td>Tramo# "+cod_tramos[i]+"</td></tr>";
 
             //var selecttramo = document.getElementById("selecttramo");
             //c=c+"<tr><td>"+(i+1)+"</td><td>" + selecttramo.options[selecttramo.selectedIndex].innerHTML + "</td></tr>";
         }
-        c=c+"</table>";
-        c=c+"<select multiple  name ='cod_tramos[]' style='display:none'>";
+        c=c+"</tbody></table>";
+        c=c+"<select name ='cod_tramos[]' class='form-control'>";
         for(var i=0;i<cod_tramos.length;i++){
-            c=c+"<option value='"+cod_tramos[i]+"'selected='true' >codparadas nuevas</option>";
+            c=c+"<option value='"+cod_tramos[i]+"'selected='true' >"+cod_tramos[i]+"</option>";
         }
         c=c+"</select>";
         document.getElementById("panel_cod_tramos").innerHTML =c;

@@ -122,6 +122,7 @@ function mueve_marke(x,y){
         v_pol[x]=[];
         v_pol[x].push( vector_markes[x].getPosition());
         v_pol[x].push( vector_markes[y].getPosition());
+
         if(y>0)tiempo[x+1]=google.maps.geometry.spherical.computeDistanceBetween(vector_markes[x].getPosition(),vector_markes[y].getPosition())*0.25;
         if (rutaactual)
             rutaactual.setMap(null);
@@ -216,14 +217,14 @@ function pasar_paradas_a_div()
         cc=cc+"<option value='"+vector_markes[i].title+"'selected='true' >IDPARADA</option>";
     }
     cc=cc+"</select>";
-    cc+="<select name ='"+tiempo[]+"'>";
+    cc+="<select multiple  name ='tiempo[]' style='display:none'>";
     for(var i=0;i<vector_markes.length;i++){
         tt=tt+tiempo[i];
         cc=cc+"<option value='"+(tt/60)+"'selected='true' >TIEMPO</option>";
     }
     cc=cc+"</select>";
     /**********************************PASAMOS TRAZO**************************************/
-    cc+="<select name ='"+trazo[]+"'>";  //Editado
+    cc+="<select multiple  name ='trazo[]' style='display:none'>";
     for(var i=0;i<vector_markes.length;i++){
         cc=cc+"<option value='"+trazo[i]+"'selected='true' >trazo</option>";
     }
@@ -231,22 +232,22 @@ function pasar_paradas_a_div()
 
     /***********************hasta aqui terminamos de pasar los datos de tiene*************/
     /***********************adicionamos  latitud y longitud de  una  parada***************/
-    cc+="<select multiple name ='latitud[]' style='display:none'>";
+    cc+="<select multiple  name ='latitud[]' style='display:none'>";
     for(var i=0;i<vector_markes.length;i++){
         tt=tt+tiempo[i];
         //console.log(vector_markes[i]);
         if(vector_markes[i].draggable)cc=cc+"<option value='"+vector_markes[i].getPosition().lat()+"'selected='true' >latitud</option>";
     }
     cc=cc+"</select>";
-    cc+="<select multiple name='longitud[]' style='display:none'>";
+    cc+="<select multiple  name ='longitud[]' style='display:none'>";
     for(var i=0;i<vector_markes.length;i++){
         tt=tt+tiempo[i];
         if(vector_markes[i].draggable)cc=cc+"<option value='"+vector_markes[i].getPosition().lng()+"'selected='true' >longitud</option>";
     }
     cc=cc+"</select>";
-    cc+="<select name='cod_paradas_nuevas[]' class='form-control'>";
+    cc+="<select multiple  name ='cod_paradas_nuevas[]' style='display:none'>";
     for(var i=0;i<vector_markes.length;i++){
-        if(vector_markes[i].draggable)cc=cc+"<option value='"+vector_markes[i].title+"'selected='true' >"+vector_markes[i].title+"</option>";
+        if(vector_markes[i].draggable)cc=cc+"<option value='"+vector_markes[i].title+"'selected='true' >codparadas nuevas</option>";
     }
     cc=cc+"</select>";
     /**************************terminamos de adicionar las latitudes y longitudes***************/
