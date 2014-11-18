@@ -29,7 +29,7 @@
 
     <script type="text/javascript" src="js/nav.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry"></script>
-    <script type="text/javascript" src="js/codigo.js"></script>
+    <script type="text/javascript" src="codigo.js"></script>
     <script>
         /*************Aqui obtenemos todas las paradas de la base de datos *********/
     var polilynes=[];
@@ -107,85 +107,87 @@ require 'navegacion.php';
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-4">
-                        <!-- Contend de Funcionalidad-->
-                        <div class="container-fluid">
-                            <div class="row" id="panel">
-                                <form action="recibir-ruta.php" method="post" role="form">
-                                    <div class="form-group">
-                                        <label >Nombre: </label>
-                                        <input class="form-control" id="referencia" name="nombre" type="text" placeholder="Ingrese Nombre">
-                                        <p class="help-block">Ejemplos 398,linea roja, Z</p>
-                                    </div>
-                                    <?php
-                                    require_once 'archivodeconexion.php';
-                                    $co = obtenerconexion();
-                                    $reggg = mysqli_query($co, "SELECT SUM( s.n ) as nro FROM (SELECT idlinea, COUNT( * ) AS n FROM  `linea` GROUP BY idlinea)s") or die("Error en la consulta sql: ". mysqli_error($co));
+                        <form action="recibir-ruta.php" method="post" role="form">
+                            <!-- Contend de Funcionalidad-->
+                            <div class="container-fluid">
+                                <div class="row" id="panel">
 
-                                    while ($rexx = mysqli_fetch_array($reggg)) {
-                                        $nro = $rexx['nro'];
-                                    }
-                                    $nro++;
-                                    ?>
-                                    <input type="hidden" name="codnombre" id="codnombre"value=<?php echo $nro; ?>>
-
-                                    <div class="form-group">
-                                        <label>Tipo</label>
-                                        <select id="tipo" name="tipo_transporte" class="form-control">
-                                            <option value="Bus">Bus</option>
-                                            <option value="Micro">Micro</option>
-                                            <option value="Minibus">Minibus</option>
-                                            <option value="Teleferico">Teleferico</option>
-                                        </select>
-                                        <p class="help-block">Introdusca el Tipo de Trasporte </p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Sindicato </label>
-                                        <select  name="sindicato" id="sindicato" class="form-control">
-                                            <?php
-                                            require_once 'archivodeconexion.php';
-                                            $con = obtenerconexion();
-
-                                            $registros = mysqli_query($con, "SELECT nombre ,idsindicato FROM `sindicato` order by nombre asc") or die("Error en la consulta sql: ". mysqli_error($con));
-                                            $cantidaddepuntos = 0;
-                                            while ($reg = mysqli_fetch_array($registros)) {
-
-                                                $nombre[$cantidaddepuntos] = $reg['nombre'];
-                                                $codigo[$cantidaddepuntos] = $reg['idsindicato'];
-                                                $cantidaddepuntos++;
-                                            }
-                                            echo "cantida de puntos   =".$cantidadepuntos;
-                                            for($i = 0; $i < $cantidaddepuntos; $i++) {
-                                                echo "<option value='".$codigo[$i]."'>".$nombre[$i]."</option>";
-                                            }
-                                            ?>
-                                        </select>
-                                        <p class="help-block">En caso de no encontrar el sindicato, Adicione otro Sindicato</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Lista de Tramos para Ruta </label>
-                                        <select onChange="seleccionado(this,0)" id="selecttramo" class="form-control">
+                                        <div class="form-group">
+                                            <label >Nombre: </label>
+                                            <input class="form-control" id="referencia" name="nombre" type="text" placeholder="Ingrese Nombre">
+                                            <p class="help-block">Ejemplos 398,linea roja, Z</p>
+                                        </div>
                                         <?php
-                                            /**/
-                                            for ($i = 0, $tam = count($idtramo); $i < $tam; $i++) {
-                                                echo "<option value='".$idtramo[$i]."'>Tramo ".$idtramo[$i]." ". $referenciatramo[$i]. "</option>";
-                                            }
+                                        require_once 'archivodeconexion.php';
+                                        $co = obtenerconexion();
+                                        $reggg = mysqli_query($co, "SELECT SUM( s.n ) as nro FROM (SELECT idlinea, COUNT( * ) AS n FROM  `linea` GROUP BY idlinea)s") or die("Error en la consulta sql: ". mysqli_error($co));
+
+                                        while ($rexx = mysqli_fetch_array($reggg)) {
+                                            $nro = $rexx['nro'];
+                                        }
+                                        $nro++;
                                         ?>
-                                        </select>
-                                        <p class="help-block">En caso de no encontrar el Tramo, Adicione otro Tramo</p>
-                                    </div>
-                                    <button class="btn btn-warning" type="button" onclick="pasar_tramo_a_div()" value="Adicionar Tramo en Ruta">Adicionar Tramo en Ruta</button>
-                                    <button type="submit" value="Enviar" class="btn btn-primary">Enviar</button>
-                                </form>
-                                <br>
+                                        <input type="hidden" name="codnombre" id="codnombre"value=<?php echo $nro; ?>>
+
+                                        <div class="form-group">
+                                            <label>Tipo</label>
+                                            <select id="tipo" name="tipo_transporte" class="form-control">
+                                                <option value="Bus">Bus</option>
+                                                <option value="Micro">Micro</option>
+                                                <option value="Minibus">Minibus</option>
+                                                <option value="Teleferico">Teleferico</option>
+                                            </select>
+                                            <p class="help-block">Introdusca el Tipo de Trasporte </p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Sindicato </label>
+                                            <select  name="sindicato" id="sindicato" class="form-control">
+                                                <?php
+                                                require_once 'archivodeconexion.php';
+                                                $con = obtenerconexion();
+
+                                                $registros = mysqli_query($con, "SELECT nombre ,idsindicato FROM `sindicato` order by nombre asc") or die("Error en la consulta sql: ". mysqli_error($con));
+                                                $cantidaddepuntos = 0;
+                                                while ($reg = mysqli_fetch_array($registros)) {
+
+                                                    $nombre[$cantidaddepuntos] = $reg['nombre'];
+                                                    $codigo[$cantidaddepuntos] = $reg['idsindicato'];
+                                                    $cantidaddepuntos++;
+                                                }
+                                                echo "cantida de puntos   =".$cantidadepuntos;
+                                                for($i = 0; $i < $cantidaddepuntos; $i++) {
+                                                    echo "<option value='".$codigo[$i]."'>".$nombre[$i]."</option>";
+                                                }
+                                                ?>
+                                            </select>
+                                            <p class="help-block">En caso de no encontrar el sindicato, Adicione otro Sindicato</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Lista de Tramos para Ruta </label>
+                                            <select onChange="seleccionado(this,0)" id="selecttramo" class="form-control">
+                                            <?php
+                                                /**/
+                                                for ($i = 0, $tam = count($idtramo); $i < $tam; $i++) {
+                                                    echo "<option value='".$idtramo[$i]."'>Tramo ".$idtramo[$i]." ". $referenciatramo[$i]. "</option>";
+                                                }
+                                            ?>
+                                            </select>
+                                            <p class="help-block">En caso de no encontrar el Tramo, Adicione otro Tramo</p>
+                                        </div>
+                                        <button class="btn btn-warning" type="button" onclick="pasar_tramo_a_div()" value="Adicionar Tramo en Ruta">Adicionar Tramo en Ruta</button>
+                                        <button type="submit" value="Enviar" class="btn btn-primary">Enviar</button>
+
+                                    <br>
+                                </div>
+
                             </div>
-                            
-                        </div>
-                        <div class="container-fluid">
-                            <div class=" row panel panel-info">
-                                <div class="panel-heading">Panel #Tramos</div>
-                                <div class="panel-body" id="panel_cod_tramos"></div>
-                            </div>                        
-                        </div>
+                            <div class="container-fluid">
+                                <div class=" row panel panel-info">
+                                    <div class="panel-heading">Panel #Tramos</div>
+                                    <div class="panel-body" id="panel_cod_tramos"></div>
+                                </div>
+                            </div>
+                        </form>
                         <!-- / Contend de Funcionalidad-->
                     </div>
                     <div id="mapa" class="col-lg-8"></div>

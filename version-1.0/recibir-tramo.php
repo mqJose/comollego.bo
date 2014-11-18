@@ -1,4 +1,6 @@
 <?php
+
+//echo json_encode($_REQUEST);
 require_once 'archivodeconexion.php';
 $conexion = obtenerconexion();
 
@@ -8,7 +10,7 @@ $tiempos=$_REQUEST["tiempo"];
 $trazos=$_REQUEST["trazo"];
 for ($i=0;$i<count($idparadas);$i++){
 	
-	mysqli_query($conexion, "INSERT INTO `vico`.`tiene` (`idtramo`, `idparada`, `tiempo`, `trazo`) VALUES ('$_REQUEST[id_tramo]', '$idparadas[$i]',  '$tiempos[$i]',  '$trazos[$i]');") or die("Problemas en el select".mysqli_error($conexion));
+	mysqli_query($conexion, "INSERT INTO `vico`.`tiene` (`idtramo`, `idparada`, `tiempo`, `trazo`, `orden`) VALUES ('$_REQUEST[id_tramo]', '$idparadas[$i]',  '$tiempos[$i]',  '$trazos[$i]', $i);") or die("Problemas en el select".mysqli_error($conexion));
 }
 
 $nuevos=$_REQUEST["cod_paradas_nuevas"];
@@ -47,6 +49,6 @@ for($i=0;$i<count($latps);$i++){
 	//$nro_puntos++;
 }
 */
-//mysqli_close($conexion);
+mysqli_close($conexion);
 header('Location: crear-tramo.php');
 ?>

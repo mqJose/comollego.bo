@@ -81,7 +81,7 @@
         var idtramo=""+<?php echo $nro;?>;
         /*************Aqui obtenemos todas las paradas de la base de datos   en puntos  y  id *********/
         function guarda_tramo() {
-            alert("la  el tramo ya fue guardado ya fue guardada  en nuesta base de datos");
+            alert("El tramo se guardara en la base de datos");
         }
     </script>
 </head>
@@ -396,28 +396,29 @@
                     <div class="col-lg-4">
                     <!-- Content  de Funcionalidad-->
                         <div class="container-fluid">
-                            <div class="row" id="panel">
-                                <form action="recibir-tramo.php" method="post" role="form">
-                                    <div class="form-group">
-                                        <label >Tramo #: <?php echo $nro; ?></label>
-                                        <input class="form-control" id="referencia" type="text" placeholder="Referencia">
-                                        <p class="help-block">Ejemplo: Origen - Destino</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only">id Tramo</label>
-                                        <input class="form-control" id="id_tramo" name="id_tramo" type="hidden" value="<?php echo $nro; ?>">
-                                    </div>
-                                    <button type="submit" onclick="guarda_tramo();"value="Guardar Tramo" class="btn btn-primary">Guardar Tramo</button>
-                                    <div ></div>
-                                </form>
-                            </div>
-                            <br>
-                            <div class=" row panel panel-info">
-                                <div class="panel-heading">Panel de Paradas</div>
-                                <div class="panel-body" id="panel_de_paradas">    
+                            <form action="recibir-tramo.php" method="post" role="form">
+                                <div class="row" id="panel">
+
+                                        <div class="form-group">
+                                            <label >Tramo #: <?php echo $nro; ?></label>
+                                            <input class="form-control" id="referencia" name="referencia" type="text" placeholder="Referencia" required>
+                                            <p class="help-block">Ejemplo: Origen - Destino</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only">id Tramo</label>
+                                            <input class="form-control" id="id_tramo" name="id_tramo" type="hidden" value="<?php echo $nro; ?>">
+                                        </div>
+                                        <button type="submit" onclick="guarda_tramo();" value="Guardar Tramo" class="btn btn-primary">Guardar Tramo</button>
+                                        <div ></div>
+
                                 </div>
-                            </div>
-                        
+                                <br>
+                                <div class=" row panel panel-info">
+                                    <div class="panel-heading">Panel de Paradas</div>
+                                    <div class="panel-body" id="panel_de_paradas">
+                                    </div>
+                                </div>
+                            </form>
                         <!-- / Content  de Funcionalidad-->   
                         </div>
                     </div>
