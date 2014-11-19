@@ -72,8 +72,9 @@ require 'panelizquierdo.php';
 ?>
 
 <div id="mapa" style="float:left;width:60%;height:90%;"></div>
+
 <div id="panel" style="float:left;width:30%;height:90%;">
-    <form action="recibir tramo.php" method="post">
+    <form action="recibir tramo.php" method="get">
         <fieldset>
             <legend>Datos del nuevo tramo</legend>
             <b>

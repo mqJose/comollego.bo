@@ -2,6 +2,8 @@
 require_once 'archivodeconexion.php';
 $conexion = obtenerconexion();
 
+echo json_encode($_REQUEST);
+
 mysqli_query($conexion, "INSERT INTO `vico`.`tramo` (`idtramo`, `referencia`) VALUES ('$_REQUEST[id_tramo]', '$_REQUEST[referencia]')") or die("Problemas al insertar en la base de datos".mysqli_error($conexion));
 $idparadas=$_REQUEST["idparada"];
 $tiempos=$_REQUEST["tiempo"];
@@ -48,5 +50,5 @@ for($i=0;$i<count($latps);$i++){
 }
 */
 //mysqli_close($conexion);
-header('Location: crear_tramo.php');
+//header('Location: crear_tramo.php');
 ?>

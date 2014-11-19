@@ -281,8 +281,13 @@
                             <a href="#"><i class="fa fa-play fa-fw"></i> Linea<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="crear-ruta.php"> Crear Ruta</a>
+                                    <a href="crear-ruta.php"> Crear Linea</a>
                                 </li>
+
+                                <li>
+                                    <a href="ver-lineas.php"> Ver Lineas</a>
+                                </li>
+
                                 <li>
                                     <a href="#"> Eliminar Ruta</a>
                                 </li>
@@ -305,6 +310,8 @@
                                 </li>
                             </ul>
                         </li>
+
+
                         <li>
                             <a href="ayuda.php"><i class="fa fa-support fa-fw"></i> Ayuda</a>
                         </li>

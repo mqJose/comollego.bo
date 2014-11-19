@@ -76,7 +76,7 @@ require 'panelizquierdo.php';
 <div id="mapa" style="float:left;width:60%;height:90%;"></div>
 
 <div id="panel" style="float:left;width:30%;height:90%;">
-    <form action="recibir ruta.php" method="post">
+    <form action="recibir ruta.php" method="get">
         <fieldset>
             <legend>Datos de nueva Ruta</legend>
             <label  style="width: 15%;float: left;">Nombre :</label>

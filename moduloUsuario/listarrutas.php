@@ -115,12 +115,13 @@
                     </div>
                     <div class="panel-body">
                         <div id="ruta">Cargando...</div>
-                    </div>
-                </div>
-
-                <div class="panel panel-info">
-                    <div >
                         <div id="detallesdelaruta">Seleccione una ruta ...</div>
+
+                        <br/>
+                        <p>Lineas del Tramo selecionado:</p>
+                        <button class=" btn btn-success" >
+                            <p id="lieneasdisponibles"></p>
+                        </button>
                     </div>
                 </div>
 

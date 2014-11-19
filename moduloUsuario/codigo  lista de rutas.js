@@ -160,6 +160,8 @@ function porTransportePublico(respuesta) {
 
 }
 
+var lineasquepasanportramo = [];
+
 function actualizarAlternativa() {
     if (!alternativas.length)return;
     var alternativaseleccionada = document.getElementById("selectalternativas").selectedIndex;
@@ -205,10 +207,15 @@ function actualizarAlternativa() {
         }
     }
 
-    var detalles = "<select id = 'selecttramo' size="+tienetramos.length+" style='width:100%' onchange = 'dibujarTramo();'>";
+    var detalles = "<select class='form-control' id = 'selecttramo' size="+tienetramos.length+" onchange = 'dibujarTramo();'>";
+    lineasquepasanportramo = [];
+
     for (var i = 0; i < tienetramos.length; i++) {
-        detalles += "<option  value = " + tienetramos[i] + ">" +(i+1)+" .- "+ referenciatramo[tienetramos[i]] +"<br> (Lineas:" + lineaspasanportramo[tienetramos[i]] + ")</option>";
+        detalles += "<option  value = " + tienetramos[i] + ">" +(i+1)+" .- "+ referenciatramo[tienetramos[i]] +"</option>";
+        console.log("LINEAS DEL TRAMO : " + lineaspasanportramo[tienetramos[i]]);
+        lineasquepasanportramo.push(lineaspasanportramo[tienetramos[i]]);
     }
+    detalles += "<option  value = " + tienetramos[tienetramos.length - 1] + "></option>";
 
 
     detalles += "</select>";
@@ -229,6 +236,9 @@ function dibujarTramo() {
     }
 
     trazarTramo(poligono);
+    document.getElementById("lieneasdisponibles").innerHTML = lineasquepasanportramo[selecttramo.selectedIndex];
+
+
 }
 
 function dibujarLinea(poligono) {
