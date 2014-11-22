@@ -1,0 +1,432 @@
+commit c7b821624bd5de2595658cbada0a96ba6bee56d9
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Sat Nov 22 10:42:35 2014 -0400
+
+    Ordenando
+
+commit f6d6fa2e8322e9a381bb60cf54a59442e8e8b83a
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Wed Nov 19 12:28:52 2014 -0400
+
+    Independiente del nombre de la base de datos
+
+commit 851c27d84f9d4599f9abb3e1d91c15b32c861e0d
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Tue Nov 18 00:06:08 2014 -0400
+
+    para no tener que responder preguntas
+
+commit e3a8337494f47637598e7c2e15cead316220c1d6
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Mon Nov 17 23:57:05 2014 -0400
+
+    Base de datos actualizada
+
+commit 762542c285a9b305a856af1982d27075f43b2092
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Mon Nov 17 23:48:41 2014 -0400
+
+    Ahora ya funciona todo lo del admin
+
+commit cf85f061ec0a884ddf55aa14263aa329264ec6b2
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Mon Nov 17 11:14:05 2014 -0400
+
+    Listo para la presentacion,(Hora de salvar el mundo)
+
+commit c7de6b7f34ecd5b6ebed92b801513f8e15b4e530
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Mon Nov 17 10:16:59 2014 -0400
+
+    Ya se dibujan los tramos de las lineas
+
+commit f6e8a2004e7d76a544e4752b7901423ebe7a3a5d
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Mon Nov 17 07:49:51 2014 -0400
+
+    Casi listo
+
+commit 57d3c7c81b03a82b12c1eea56b524c23a48b5698
+Author: mqJose <mq.josedavid@gmail.com>
+Date:   Mon Nov 17 05:13:02 2014 -0400
+
+    Hasta aqui llegue
+
+commit 8ceb9d120bd01fde1f94f4f5df3b4fb8f9a05b60
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Sun Nov 16 21:27:58 2014 -0400
+
+    Fusionado View con el modulo del Usuario
+
+commit bd441a62ef9f3180f00265c10648a77de2bf38e7
+Author: mqJose <mq.josedavid@gmail.com>
+Date:   Sun Nov 16 16:39:37 2014 -0400
+
+    no era usado
+
+commit 662f40534af8680c30ffdf2ad9a60c0182b250fb
+Author: mqJose <mq.josedavid@gmail.com>
+Date:   Sun Nov 16 16:37:44 2014 -0400
+
+    midifique imagens
+
+commit 96b68d26599ec211c3e43df43134f2bf5b5bbe20
+Author: mqJose <mq.josedavid@gmail.com>
+Date:   Sun Nov 16 15:01:17 2014 -0400
+
+    modificacion
+
+commit 998ffcd989b48d8f608b0626e0b01606d12b38be
+Author: mqJose <mq.josedavid@gmail.com>
+Date:   Sun Nov 16 04:46:42 2014 -0400
+
+    cambie contrasenia
+
+commit 47f5bfae0febc8c16918246db3638b50de80f76b
+Author: mqJose <mq.josedavid@gmail.com>
+Date:   Sun Nov 16 04:28:20 2014 -0400
+
+    con disenio
+
+commit d7b1fc5a6a7cffb8c1882d06475a8d2771469918
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Sat Nov 15 23:10:46 2014 -0400
+
+    Updating
+
+commit 522f7984de14611b03209d6fc903ae159ba03c0a
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Sat Nov 15 22:06:21 2014 -0400
+
+    Ya se pueden ver las lineas
+
+commit f7cdfc782bf1f13f05485de863acf4db9008592c
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Sat Nov 15 19:23:10 2014 -0400
+
+    Against the JS
+
+commit f62fd71ee519ea784c789e77c796f41fa4ee49f2
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Sat Nov 15 16:16:22 2014 -0400
+
+    Intentando poner algo de orden en los archivos, para poder manejarlos con mas facilidad
+
+commit 0c8c52105f69e7d33c9ba5d3c809d0d6b980b29a
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Sat Nov 15 14:51:15 2014 -0400
+
+    Updating ER Diagram
+
+commit 2a3c6ab68d8503e9e2ce3867471ad502f105985d
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Sat Nov 15 00:28:45 2014 -0400
+
+    Coding
+
+commit 3e728e6b8420dfb2d4c591e814654a49286f5b4a
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Sat Nov 15 00:20:57 2014 -0400
+
+    Updating again again and again
+
+commit ee4bbc26dc9dfd4f336d5c402d5679c6357fefe8
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Sat Nov 15 00:20:12 2014 -0400
+
+    Updating again
+
+commit 76ba8d76b556315c057a067b8202bec5edbbc30a
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Sat Nov 15 00:11:20 2014 -0400
+
+    Sorting Sorting
+
+commit 0c909f0f430ffced68fd045488d0789068a4ed61
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Sat Nov 15 00:08:00 2014 -0400
+
+    Sorting the files
+
+commit e7f926f5c60d721ef7879ada55cba47a627146f9
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Thu Nov 13 05:33:23 2014 -0400
+
+    Funcilidad o como se escriba ya funca
+
+commit c33ca1bb70d82efd12d9d57279116fa910e852c2
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Thu Nov 13 00:27:29 2014 -0400
+
+    Database's script updated
+
+commit 877f097627d3472f2148f14d8457b6d48c6e5986
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Thu Nov 13 00:22:57 2014 -0400
+
+    script mejorado
+
+commit 0cfefd63d7bf24cf59c1eb5de0c2d93e23d9d612
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Thu Nov 13 00:04:27 2014 -0400
+
+    Modificando vico.sql
+
+commit 94c01b636948e653e4db36d0b6f448809809e82b
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Thu Nov 13 00:02:34 2014 -0400
+
+    Salvando el mundo con los commits
+
+commit 51189b7ac1522f686b58b201ebb36cf4aa6e2706
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Wed Nov 12 23:33:39 2014 -0400
+
+    Modifique gitignore
+
+commit 9848cdd581be55a737e426b092bbed47a1068836
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Wed Nov 12 23:32:34 2014 -0400
+
+    Adicione un gitignore
+
+commit 1a68f91959eabd8e0ca8f5c9459ad1ef8f86d575
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Wed Nov 12 23:21:32 2014 -0400
+
+    Ahora a programar la funcionalidad
+
+commit 58d016ad9038b2ab1ff23552f6292c82d2418d0f
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Wed Nov 12 14:12:15 2014 -0400
+
+    Pequeñisimo cambio en la DB
+
+commit 933eec907571c77884830b56be28025ac8f0a81f
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Wed Nov 12 14:10:18 2014 -0400
+
+    Estos nuevos cambios si salvaran al mundo
+
+commit b40081d82b2a3c9b8ef03f351abb8c80394b6f9b
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Wed Nov 12 14:07:26 2014 -0400
+
+    Mas cambios que salvaran al mundo
+
+commit e5e90125b886b6b1f343dd893a367e9731cf2c4e
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Wed Nov 12 13:59:54 2014 -0400
+
+    Updated
+
+commit 93d775a8d98cda9cd5fa55e15c9994c7d6d4c1cb
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Tue Nov 11 23:41:44 2014 -0400
+
+    Los mismos archivos que salvaran el mundo salvaran a la pagina principal
+
+commit ec020e824d27c8485956edb9b4362f74e8854413
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Tue Nov 11 23:39:29 2014 -0400
+
+    Cree un archivo de configuracion que salva el mundo
+
+commit 20b376eeca96ce51f6efb6c38aba13b7c3b91655
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Tue Nov 11 22:42:13 2014 -0400
+
+    Modelo ER updated
+
+commit 4a288c44f08aad2c24b00e3e32c3b45d50d6616c
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Tue Nov 11 10:57:20 2014 -0400
+
+    Database updated
+
+commit efb22a39dad4c2bc19eb7ccfa06f3fd377d87577
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Tue Nov 11 10:55:10 2014 -0400
+
+    Last update
+
+commit a501234dc7f47e1a5a9b3da069df8c63a241b7d5
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Tue Nov 4 11:26:56 2014 -0400
+
+    update
+
+commit cb67a9cea6bcca7213e17888dd1f26bba76f94dd
+Author: VicoVillca <vicovillca@hotmail.com>
+Date:   Tue Nov 4 05:00:06 2014 +0100
+
+    Delete vico_prueva.txt
+
+commit 91def71146600368aed95dea588cbe5eb1a48e53
+Author: VicoVillca <vicovillca@hotmail.com>
+Date:   Tue Nov 4 04:59:52 2014 +0100
+
+    Delete maria_bateria_bariga_fria.txt
+
+commit 45a4da74819cac1217aec038e431e82e12698246
+Author: VicoVillca <vicovillca@hotmail.com>
+Date:   Tue Nov 4 04:59:25 2014 +0100
+
+    Delete vico_prueva.txt
+
+commit 1ed21b43ad32580108d9e503f8d6b4ce1203c640
+Author: VicoVillca <vicovillca@hotmail.com>
+Date:   Tue Nov 4 04:59:03 2014 +0100
+
+    Delete maria_bateria_bariga_fria.txt
+
+commit 727f27f60d0e342b0e920f9b7ae9352fed937d8d
+Author: VicoVillca <vicovillca@hotmail.com>
+Date:   Mon Nov 3 10:52:38 2014 +0100
+
+    supermantenido
+
+commit 4ecae3be7419f54bab21e671ef5ad7bda73e18ec
+Author: VicoVillca <vicovillca@hotmail.com>
+Date:   Mon Nov 3 10:39:23 2014 +0100
+
+    mensage
+
+commit 97274d6c073f36411aa310fbb63c0511ff43238b
+Author: VicoVillca <vicovillca@hotmail.com>
+Date:   Mon Nov 3 10:21:22 2014 +0100
+
+    mensage
+
+commit eb7eba7d58d502d14b445703881170e756692f8a
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Mon Nov 3 21:33:57 2014 -0400
+
+    Updating
+
+commit 29a5a13a1933ff4a34b2f6b4dc67e2ffdd6eb127
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Mon Nov 3 21:09:22 2014 -0400
+
+    arregle un par de errores
+
+commit 1c77dff174d7924086a8f49a96d4f8be1e0628d3
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Mon Nov 3 19:35:52 2014 -0400
+
+    Working in the backend
+
+commit 2f6a51a5b5fb5f5683fa4e335adee391f2c0f0c9
+Author: mqJose <mq.josedavid@gmail.com>
+Date:   Thu Oct 23 03:39:05 2014 -0400
+
+    Vista de pantalla v3
+
+commit ffb92b3cfc4d849a65af5b37b51bce4bd09dec08
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Mon Oct 6 23:47:01 2014 -0400
+
+    mas funcionalidad
+
+commit e6e35a649a4caa326eeac1b44d84ce3a8b33ca7c
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Fri Oct 3 15:44:06 2014 -0400
+
+    Fixing
+
+commit 068d369db486077f569a84697578fe7d2d795fe6
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Fri Oct 3 15:40:25 2014 -0400
+
+    Esta vivo\!\!\!
+
+commit f9df2351dae0cb1a24e04a314fccb77069ba7cf4
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Fri Oct 3 15:13:52 2014 -0400
+
+    cambie nombre con extension
+
+commit a38d175c1ecb90e331347dde520ad9f1cff8db49
+Author: VicoVillca <vicovillca@hotmail.com>
+Date:   Fri Oct 3 15:12:38 2014 -0400
+
+    Create ruta bd prueva
+
+commit e997c932f3804c2f75e418430f961cbf40f5555c
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Fri Oct 3 15:10:20 2014 -0400
+
+    Por fin iniciamos
+
+commit 34aee92638347921a40c10a1a553ef65b57b3a32
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Fri Oct 3 13:16:23 2014 -0400
+
+    Adicione un script para generar las consultas para adicionar paradas en la base de datos
+
+commit e8a22991d2ccce87c839d8db6c34e2287118159c
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Fri Oct 3 13:11:57 2014 -0400
+
+    Datos de prueba para las parada para la DB
+
+commit 3dda978afd1771e6198032f99feb6012f118b23e
+Author: mq.Jose <mq.josedavid@gmail.com>
+Date:   Fri Oct 3 12:37:48 2014 -0400
+
+    version 2
+
+commit d19198828918037c3da3502adcf63b751007dd40
+Author: mq.Jose <mq.josedavid@gmail.com>
+Date:   Fri Oct 3 12:19:49 2014 -0400
+
+    modificado
+
+commit ea8beccd0f0b38bff477f13eb8585911815203fd
+Author: mq.Jose <mq.josedavid@gmail.com>
+Date:   Fri Oct 3 11:14:29 2014 -0400
+
+    probando con maquina 2
+
+commit 525f4e3470f562fc3947862df8ec0ab81b5462e9
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Tue Sep 30 09:15:01 2014 -0400
+
+    Modelo BD
+
+commit cfc80c33b427a206726afb2e5f5bf736c0b210d5
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Tue Sep 30 09:14:26 2014 -0400
+
+    CREARDBcomollego.sql
+
+commit a206a2cc74e9c60f494066f0d938fdd277f8f459
+Merge: 130454e 40bad20
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Tue Sep 30 08:01:44 2014 -0400
+
+    Merge branch 'master' of github.com:mqJose/comollego.bo
+
+commit 130454eb7f67d800fe8df77ae4d863381e054e50
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Tue Sep 30 08:00:22 2014 -0400
+
+    Puntos para un polyline xD
+
+commit 40bad20367f297d70bdd861e5eea9f1fb56ab794
+Author: mqJose <mq.josedavid@gmail.com>
+Date:   Tue Sep 30 02:53:48 2014 -0300
+
+    version inicial del proyecto
+
+commit cd9304992da8db4c79e709a3dfbd35fa5f2968fd
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Mon Sep 29 15:33:20 2014 -0400
+
+    Inicio del modulo generador de Lineas
+
+commit b444ad53fe4b5a4e73a3f83b08f449ae9a5bf9c6
+Author: branimir <brani.espinoza@gmail.com>
+Date:   Tue Sep 9 20:12:25 2014 -0400
+
+    Primer commit
