@@ -1,8 +1,8 @@
-drop database IF EXISTS comollegodb;
+drop database IF EXISTS vico;
 
-CREATE DATABASE  IF NOT EXISTS `comollegodb`;
+CREATE DATABASE  IF NOT EXISTS `vico`;
 
-USE `comollegodb`;
+USE `vico`;
 
 -- phpMyAdmin SQL Dump
 -- version 3.4.11.1deb2
@@ -133,3 +133,16 @@ CREATE TABLE IF NOT EXISTS `tramo` (
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+CREATE TABLE comentario(
+  idcomentario int(11) NOT NULL AUTO_INCREMENT,
+  denunciante varchar(100),
+  email varchar(50),
+  contenido varchar(500) NOT NULL,
+  placa_automovil varchar(10),
+  tipo varchar(2),
+  fecha datetime,
+  idlinea varchar(11),
+  PRIMARY KEY(idcomentario),
+  FOREIGN KEY(idlinea) REFERENCES linea(idlinea)-- sino quiere adicionar la c. foranea quitar esta linea
+);

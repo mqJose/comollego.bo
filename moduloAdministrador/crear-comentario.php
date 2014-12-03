@@ -1,3 +1,6 @@
+<?php
+require 'database.php'
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -281,8 +284,13 @@
                             <a href="#"><i class="fa fa-play fa-fw"></i> Linea<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a class="active" href="crear-ruta.php"> Crear Ruta</a>
+                                    <a href="crear-ruta.php"> Crear Linea</a>
                                 </li>
+
+                                <li>
+                                    <a href="ver-lineas.php"> Ver Lineas</a>
+                                </li>
+
                                 <li>
                                     <a href="#"> Eliminar Ruta</a>
                                 </li>
@@ -292,7 +300,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-play fa-fw"></i> Tramo<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-play fa-fw "></i> Tramo<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="crear-tramo.php"> Crear Tramo</a>
@@ -306,10 +314,10 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="comentario.php"><i class="fa fa-play fa-fw"></i>Comentario</a>
+                            <a class="active" href="comentario.php"><i class="fa fa-play fa-fw"></i>Comentario</a>
                         </li>
                         <li>
-                            <a class="active" href="ayuda.php"><i class="fa fa-support fa-fw"></i> Ayuda</a>
+                            <a href="ayuda.php"><i class="fa fa-support fa-fw"></i> Ayuda</a>
                         </li>
                     </ul>
                 </div>
@@ -320,21 +328,60 @@
 
         <!-- Page Content -->
         <div id="page-wrapper">
+            <!-- /.row -->
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        
-
-
-
-
-
-
-
+                        <h3 class="page-header">Crear Comentario</h3>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
-                <!-- /.row -->
+                <div class="row">
+                    
+                    <form class="form-horizontal" action="insertar-comentario.php" method="post">
+                        <div class="control-group <?php echo !empty($denuncianteError)?'error':'';?>">
+                            <label>Nombre</label>
+                            <div class="controls">
+                            <input class="form-control" name="nombre" type="text"  placeholder="Nombre" value="<?php echo !empty($denunciante)?$denunciante:'';?>">
+                            <?php if (!empty($denuncianteError)): ?>
+                                <span class="help-inline"><?php echo $denuncianteError;?></span>
+                            <?php endif; ?>
+                            </div>
+                        </div>
+                        <div class="control-group <?php echo !empty($emailError)?'error':'';?>">
+                            <label class="control-label">Email </label>
+                            <div class="controls">
+                            <input class="form-control" name="email" type="text" placeholder="Email" value="<?php echo !empty($email)?$email:'';?>">
+                            <?php if (!empty($emailError)): ?>
+                            <span class="help-inline"><?php echo $emailError;?></span>
+                            <?php endif;?>
+                            </div>
+                        </div>
+                        <div class="control-group <?php echo !empty($contenidoError)?'error':'';?>">
+                            <label class="control-label">Contenido </label>
+                            <div class="controls">
+                            <textarea class="form-control" name="contenido" placeholder="Contenido" value="<?php echo !empty($contenido)?$contenido:'';?>"></textarea>
+                            <?php if (!empty($contenidoError)): ?>
+                            <span class="help-inline"><?php echo $contenidoError;?></span>
+                            <?php endif;?>
+                            </div>
+                        </div>
+                        <div class="control-group <?php echo !empty($idLineaError)?'error':'';?>">
+                            <label class="control-label">Código Linea</label>
+                            <div class="controls">
+                            <input class="form-control" name="idLinea" type="text"  placeholder="Codigo Linea" value="<?php echo !empty($idLinea)?$idLinea:'';?>">
+                            <?php if (!empty($idLineaError)): ?>
+                            <span class="help-inline"><?php echo $idLineaError;?></span>
+                            <?php endif;?>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Crear</button>
+                            <a class="btn btn-default" href="comentario.php">Atras</a>
+                        </div>
+                    </form>
+                </div>
             </div>
             <!-- /.container-fluid -->
         </div>

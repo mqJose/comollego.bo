@@ -235,10 +235,10 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+                            <a href="index.php"><i class="fa fa-play fa-fw"></i> Home</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i> Sindicato<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-play fa-fw"></i> Sindicato<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">                              
                                 <li>
                                     <a href="crear-sindicato.php">Crear Sindicato</a>
@@ -252,7 +252,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="active" href="#"><i class="fa fa-edit fa-fw"></i> Linea<span class="fa arrow"></span></a>
+                            <a class="active" href="#"><i class="fa fa-play fa-fw"></i> Linea<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a class="active" href="crear-ruta.php"> Crear Ruta</a>
@@ -266,7 +266,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i> Tramo<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-play fa-fw"></i> Tramo<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="crear-tramo.php"> Crear Tramo</a>
@@ -280,7 +280,10 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="ayuda.php"><i class="fa fa-dashboard fa-fw"></i> Ayuda</a>
+                            <a href="comentario.php"><i class="fa fa-play fa-fw"></i>Comentario</a>
+                        </li>
+                        <li>
+                            <a href="ayuda.php"><i class="fa fa-support fa-fw"></i> Ayuda</a>
                         </li>
                     </ul>
                 </div>

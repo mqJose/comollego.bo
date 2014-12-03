@@ -140,7 +140,7 @@
 </aside>
 <section class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
     <!--Ingresar en este contenedor el mapa de la aplicacion-->
-    <div id="mapa" style="height: 41em"></div>
+    <div id="mapa" style="height: 35em"></div>
     <!--end Mapa-->
 </section>
 <footer class="pie ">

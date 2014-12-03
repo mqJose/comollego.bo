@@ -310,8 +310,9 @@
                                 </li>
                             </ul>
                         </li>
-
-
+                        <li>
+                            <a class="active" href="comentario.php"><i class="fa fa-play fa-fw"></i>Comentario</a>
+                        </li>
                         <li>
                             <a href="ayuda.php"><i class="fa fa-support fa-fw"></i> Ayuda</a>
                         </li>
@@ -325,13 +326,14 @@
         <!-- Page Content -->
         <div id="page-wrapper">
             <div class="row">
-                <div class="col-lg-12">
-                    <h3 class="page-header">Panel Informativo</h3>
-                </div>
+                
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="page-header">Panel Informativo</h3>
+                </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -341,11 +343,11 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">26</div>
-                                    <div>Nuevos Comentarios!</div>
+                                    <div>Comentarios!</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="comentario.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Ver Detalles</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -407,11 +409,11 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">13</div>
-                                    <div>Solicitudes de Ayuda!</div>
+                                    <div>Ayuda!</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="ayuda.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Ver Detalles</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

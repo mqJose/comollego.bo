@@ -1,3 +1,81 @@
+<?php 
+	
+	require 'database.php';
+
+	$id = null;
+	if ( !empty($_GET['id'])) {
+		$id = $_REQUEST['id'];
+	}
+	
+	if ( null==$id ) {
+		header("Location: comentario.php");
+	}
+	
+	if ( !empty($_POST)) {
+
+		$denuncianteError = null;
+		$emailError = null;
+		$contenidoError = null;
+		$placa_automovilError = null;
+		$idLineaError = null;
+		
+
+		$denunciante = $_POST['nombre'];
+		$email = $_POST['email'];
+		$contenido = $_POST['contenido'];
+
+		$idLinea = $_POST['idLinea'];
+
+		$valid = true;
+		if (empty($denunciante)) {
+			$denuncianteError = 'Ingrese su nombre';
+			$valid = false;
+		}
+		
+		if (empty($email)) {
+			$emailError = 'Ingrese su Email';
+			$valid = false;
+		} else if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
+			$emailError = 'email invalido';
+			$valid = false;
+		}
+		
+		if (empty($contenido)) {
+			$contenidoError = 'Ingrese el Contenido';
+			$valid = false;
+		}
+
+		if (empty($idLinea)) {
+			$idLineaError = 'Error en el idLinea';
+			$valid = false;
+		}
+		
+		// actualizacion de datos
+		if ($valid) {
+			$pdo = Database::connect();
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql = "UPDATE comentario SET denunciante = ?, email = ?, contenido =?, idlinea = ? WHERE idcomentario = ?";
+			//print($denunciante." -* ".$email." -* ".$contenido." -* ".$idLinea);
+			$q = $pdo->prepare($sql);
+			$q->execute(array($denunciante,$email,$contenido,$idLinea,$id));
+			Database::disconnect();
+			header("Location: comentario.php");
+		}
+	} else {
+		$pdo = Database::connect();
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$sql = "SELECT denunciante, email, contenido, idlinea FROM comentario WHERE idcomentario = ?";
+		$q = $pdo->prepare($sql);
+		$q->execute(array($id));
+		$data = $q->fetch(PDO::FETCH_ASSOC);
+		$denunciante = $data['denunciante'];
+		$email = $data['email'];
+		$contenido = $data['contenido'];
+		$idLinea = $data['idlinea'];
+		Database::disconnect();
+	}
+	//update-comentario.php
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -281,8 +359,13 @@
                             <a href="#"><i class="fa fa-play fa-fw"></i> Linea<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a class="active" href="crear-ruta.php"> Crear Ruta</a>
+                                    <a href="crear-ruta.php"> Crear Linea</a>
                                 </li>
+
+                                <li>
+                                    <a href="ver-lineas.php"> Ver Lineas</a>
+                                </li>
+
                                 <li>
                                     <a href="#"> Eliminar Ruta</a>
                                 </li>
@@ -292,7 +375,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-play fa-fw"></i> Tramo<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-play fa-fw "></i> Tramo<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="crear-tramo.php"> Crear Tramo</a>
@@ -306,10 +389,10 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="comentario.php"><i class="fa fa-play fa-fw"></i>Comentario</a>
+                            <a class="active" href="comentario.php"><i class="fa fa-play fa-fw"></i>Comentario</a>
                         </li>
                         <li>
-                            <a class="active" href="ayuda.php"><i class="fa fa-support fa-fw"></i> Ayuda</a>
+                            <a href="ayuda.php"><i class="fa fa-support fa-fw"></i> Ayuda</a>
                         </li>
                     </ul>
                 </div>
@@ -320,21 +403,60 @@
 
         <!-- Page Content -->
         <div id="page-wrapper">
+            <!-- /.row -->
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        
-
-
-
-
-
-
-
+                        <h3 class="page-header">Editar Comentario</h3>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
-                <!-- /.row -->
+                <div class="row">
+                    
+                    <form class="form-horizontal" action="editar-comentario.php?id=<?php echo $id?>" method="post">
+                        <div class="control-group <?php echo !empty($denuncianteError)?'error':'';?>">
+                            <label>Nombre</label>
+                            <div class="controls">
+                            <input class="form-control" name="nombre" type="text"  placeholder="Nombre" value="<?php echo !empty($denunciante)?$denunciante:'';?>">
+                            <?php if (!empty($denuncianteError)): ?>
+                                <span class="help-inline"><?php echo $denuncianteError;?></span>
+                            <?php endif; ?>
+                            </div>
+                        </div>
+                        <div class="control-group <?php echo !empty($emailError)?'error':'';?>">
+                            <label class="control-label">Email </label>
+                            <div class="controls">
+                            <input class="form-control" name="email" type="text" placeholder="Email" value="<?php echo !empty($email)?$email:'';?>">
+                            <?php if (!empty($emailError)): ?>
+                            <span class="help-inline"><?php echo $emailError;?></span>
+                            <?php endif;?>
+                            </div>
+                        </div>
+                        <div class="control-group <?php echo !empty($contenidoError)?'error':'';?>">
+                            <label class="control-label">Contenido </label>
+                            <div class="controls">
+                            <textarea class="form-control" name="contenido" placeholder="Contenido"><?php echo !empty($contenido)?$contenido:'';?></textarea>
+                            <?php if (!empty($emailError)): ?>
+                            <span class="help-inline"><?php echo $emailError;?></span>
+                            <?php endif;?>
+                            </div>
+                        </div>
+                        <div class="control-group <?php echo !empty($idLineaError)?'error':'';?>">
+                            <label class="control-label">Código Linea</label>
+                            <div class="controls">
+                            <input class="form-control" name="idLinea" type="text"  placeholder="Codigo Linea" value="<?php echo !empty($idLinea)?$idLinea:'';?>">
+                            <?php if (!empty($idLineaError)): ?>
+                            <span class="help-inline"><?php echo $idLineaError;?></span>
+                            <?php endif;?>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Editar</button>
+                            <a class="btn btn-default" href="comentario.php">Atras</a>
+                        </div>
+                    </form>
+                </div>
             </div>
             <!-- /.container-fluid -->
         </div>

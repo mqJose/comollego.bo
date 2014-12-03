@@ -306,6 +306,9 @@
                             </ul>
                         </li>
                         <li>
+                            <a href="comentario.php"><i class="fa fa-play fa-fw"></i>Comentario</a>
+                        </li>
+                        <li>
                             <a href="ayuda.php"><i class="fa fa-dashboard fa-fw"></i> Ayuda</a>
                         </li>
                     </ul>

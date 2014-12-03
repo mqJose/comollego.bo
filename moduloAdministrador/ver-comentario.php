@@ -1,3 +1,22 @@
+<?php 
+	require 'database.php';
+	$id = null;
+	if ( !empty($_GET['id'])) {
+		$id = $_REQUEST['id'];
+	}
+	
+	if ( null==$id ) {
+		header("Location: index.php");
+	} else {
+		$pdo = Database::connect();
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$sql = "SELECT * FROM comentario where idcomentario = ?";
+		$q = $pdo->prepare($sql);
+		$q->execute(array($id));
+		$data = $q->fetch(PDO::FETCH_ASSOC);
+		Database::disconnect();
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -281,8 +300,13 @@
                             <a href="#"><i class="fa fa-play fa-fw"></i> Linea<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a class="active" href="crear-ruta.php"> Crear Ruta</a>
+                                    <a href="crear-ruta.php"> Crear Linea</a>
                                 </li>
+
+                                <li>
+                                    <a href="ver-lineas.php"> Ver Lineas</a>
+                                </li>
+
                                 <li>
                                     <a href="#"> Eliminar Ruta</a>
                                 </li>
@@ -292,7 +316,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-play fa-fw"></i> Tramo<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-play fa-fw "></i> Tramo<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="crear-tramo.php"> Crear Tramo</a>
@@ -306,10 +330,10 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="comentario.php"><i class="fa fa-play fa-fw"></i>Comentario</a>
+                            <a class="active" href="comentario.php"><i class="fa fa-play fa-fw"></i>Comentario</a>
                         </li>
                         <li>
-                            <a class="active" href="ayuda.php"><i class="fa fa-support fa-fw"></i> Ayuda</a>
+                            <a href="ayuda.php"><i class="fa fa-support fa-fw"></i> Ayuda</a>
                         </li>
                     </ul>
                 </div>
@@ -320,21 +344,28 @@
 
         <!-- Page Content -->
         <div id="page-wrapper">
+            <!-- /.row -->
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        
-
-
-
-
-
-
-
+                        <h3 class="page-header">Comentario <span class="badge badge-primary"><?php echo $data['idcomentario'];?></span>
+                        </h3>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
-                <!-- /.row -->
+                <div class="row">
+                    <div class="alert alert-info" >					  
+					    <strong>Nombre: </strong><p><?php echo $data['denunciante'];?></p>
+					    <br>
+					    <strong>Email: </strong><p><?php echo $data['email'];?></p>
+						<br>
+						<strong>Contenido: </strong><p><?php echo $data['contenido'];?></p>
+						<br>
+					    <div class="form-actions">
+						  <a class="btn btn-primary" href="comentario.php">Back</a>
+					   </div>
+                    </div>
+                </div>
             </div>
             <!-- /.container-fluid -->
         </div>
