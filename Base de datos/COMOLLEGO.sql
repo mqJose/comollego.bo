@@ -144,6 +144,5 @@ CREATE TABLE comentario(
   tipo varchar(2),
   fecha datetime,
   idlinea varchar(11),
-  PRIMARY KEY(idcomentario),
-  FOREIGN KEY(idlinea) REFERENCES linea(idlinea)-- sino quiere adicionar la c. foranea quitar esta linea
+  PRIMARY KEY(idcomentario)
 );
