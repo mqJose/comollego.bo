@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -249,6 +247,7 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
+
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
@@ -260,23 +259,28 @@
                             </div>
                             <!-- /input-group -->
                         </li>
+
                         <li>
-                            <a class="active" href="index.php"><i class="fa fa-play fa-fw"></i> Home</a>
+                            <a class="active" href="index.php"><i class="fa fa-play fa-fw"></i> Inicio</a>
                         </li>
+
                         <li>
                             <a href="#"><i class="fa fa-play fa-fw"></i> Sindicato<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">                              
                                 <li>
                                     <a href="crear-sindicato.php">Crear Sindicato</a>
                                 </li>
+
                                 <li>
                                     <a href="">Eliminar Sindicato</a>
                                 </li>
+
                                 <li>
                                     <a href="#">Modificar Sindicato</a>
                                 </li>
                             </ul>
                         </li>
+
                         <li>
                             <a href="#"><i class="fa fa-play fa-fw"></i> Linea<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -291,11 +295,13 @@
                                 <li>
                                     <a href="#"> Eliminar Ruta</a>
                                 </li>
+
                                 <li>
                                     <a href="#"> Modificar Ruta</a>
                                 </li>
                             </ul>
                         </li>
+
                         <li>
                             <a href="#"><i class="fa fa-play fa-fw "></i> Tramo<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
